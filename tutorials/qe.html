@@ -1,0 +1,92 @@
+---
+layout: default
+title: Quantum Espresso Tutorial
+---
+<link rel="stylesheet" href="../css/main.css">
+<div class="container">
+    <div class="jumbotron header-img">
+        <h1>Quantum Espresso Tutorial</h1>
+        <p><a class="btn btn-primary btn-lg header-button" href="https://github.com/torkian/slurm-qe/tree/qe_tutorial">
+            Find the files in this tutorial on our GitHub!</a></p>
+    </div>
+    <p>
+        Quantum Espresso is a software suite for ab initio quantum chemistry methods of electronic-structure calculation
+        and materials modeling.
+        It is based on Density Functional Theory, plane wave basis sets, and pseudo-potentials.
+        <a href="https://www.quantum-espresso.org/resources/users-manual">
+            Documentation for Quantum Espresso can be found on its official website.</a></p>
+    <p>Currently, Quantum Espresso versions 6.2.0, 6.3-developer, 6.4.1, 6.5 are available on the cluster. </p>
+    <div>
+        <h3 style="color:#537391;"><strong>Basics</strong></h3>
+        <p>To run Quantum Espresso on the cluster, you must first
+            load the Open MPI module and the Quantum Espresso module using the commands:
+        <p style="text-align: center;"><code>module load openmpi
+            <br/>module load qe</code></p></p>
+
+        <p>To load a specific version of the modules, add the version number to the load command.</p>
+        <p style="text-align: center;"><code>module load openmpi/gcc
+            <br/>module load qe/gcc/6.2.0</code></p></p>
+
+        <p>When running Quantum Espresso jobs, it is advised that users create a new
+            directory located in /data to store the data in, and a new directory in /local to run the job in. </p>
+
+        <p>Most Quantum Espresso input files require the assistance of pseudo-potential files, which contain
+            approximation for the simplified description of complex systems such as periodic elements.
+            It is recommended that these files are stored in a directory named /pseudo.
+            The file path of these pseudo-potential files are generally referenced at the beginning of a
+            QE input file in the &control section, as seen below: </p>
+        <p style="text-align: center;">
+            <code>&control<br/>
+                prefix='silicon',<br/>
+                pseudo_dir = 'pseudo/',<br/>
+                outdir='output/'<br/>
+                module load qe/gcc/6.2.0</code>
+        </p>
+        <p>You can also specify a directory for the output to be saved to in this &control section.
+            If the directory does not exist, it will be created when the program is run, and output files will be saved
+            there. </p>
+    </div>
+
+    <div>
+        <h3 style="color:#537391;"><strong>Running Quantum Espresso through a job script</strong></h3>
+
+        1. Create a QE input file, with the extension <i>*.in</i>. This repository provides a simple script, <i>si.scf.in</i>,
+        and it’s helper script Si.pz-vbc.UPF, which performs self-consistent calculations for Silicon in the diamond
+        structure.
+
+        <p>2.Ensure the helper script is located in a directory named /pseudo</p>
+
+        <p>3. Prepare the submission script, which is the script that is submitted to the
+            Slurm scheduler as a job in order to run the QE script. This repository provides the script <i>job.sh</i> as
+            an example.</p>
+        <h4>job.sh</h4>
+        <pre><code>
+#!/bin/bash
+
+#SBATCH --job-name=qe_test
+#SBATCH -o qe_out%j.out
+#SBATCH -e qe_err%j.err
+#SBATCH -N 2
+#SBATCH --ntasks-per-node=4
+#SBATCH -p no-kill
+
+echo -e '\n submitted Quantum Espresso job'
+echo 'hostname'
+hostname
+
+# loads Open MPI and Quantum Espresso modules
+module load openmpi/gcc
+module load qe
+
+# run Quantum Espresso using Open MPI's mpirun
+# results will be printed to output.file
+mpirun pw.x < pwscf.in
+			</code></pre>
+
+        4. Submit the job using
+        <code>sbatch job.sh</code>
+
+        <p>5. Examine the results.</p>
+    </div>
+</div>
+

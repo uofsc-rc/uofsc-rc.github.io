@@ -1,0 +1,113 @@
+---
+layout: default
+title: Open MPI Tutorial
+---
+<link rel="stylesheet" href="../css/main.css">
+<div class="container">
+    <div class="jumbotron header-img">
+        <h1>Open MPI Tutorial</h1>
+        <p><a class="btn btn-primary btn-lg header-button"
+              href="https://github.com/torkian/slurm-openMPI/tree/openMPI_tutorial">
+            Find the files in this tutorial on our GitHub!</a></p>
+    </div>
+    <p>
+        The Open MPI Project is an open source MPI-2 implementation that is developed and maintained by a consortium of
+        academic, research, and industry partners.
+        Open MPI is therefore able to combine the expertise, technologies, and resources from all across the
+        High Performance Computing community in order to build the best MPI library available.
+        Open MPI offers advantages for system and software vendors, application developers and computer science
+        researchers.
+        <a href="https://www.open-mpi.org/">Documentation for Open MPI can be found on its official website.</a></p>
+    <p>Currently, version 1.2.9, 1.10.1, 3.1.4, 4.0.1, and 4.0.3 are available on the cluster, and Open MPI can be compiled through GCC, Intel, Open64,
+        and PGI. </p>
+    <div>
+        <h3 style="color:#537391;"><strong>Basics</strong></h3>
+        <p>To use Open MPI, you must first load the Open MPI module with the compiler of your choice.
+            For example, if you want to use the GCC compiler, use the command
+        <p style="text-align: center;"><code>module load openmpi/gcc</code></p></p>
+
+        <p>To compile the file, use the Open MPI compiler wrapper that goes with your chosen file type.
+            The C wrapper is named mpicc, the C++ wrapper can be compiled with mpicxx, mpiCC, or mpicc++.</p>
+
+        <p>For example, to compile a C file, you can use the command:</p>
+        <p style="text-align: center;"><code>mpicc &lt;filename&gt;.c -o &lt;filename&gt;</code></p></p>
+        <p>where &lt;filename&gt; is the name of the file to be compiled. -o &lt;filename&gt; signals to create an output
+            file called &lt;filename&gt; that can be used to run the program using ./&lt;filename&gt;.</p>
+
+        <p>To run an Open MPI script, use the command
+        <p style="text-align: center;"><code>mpirun ./&lt;filename&gt; </code></p></p>
+
+        <p>where <i>&lt;filename&gt;</i> is the name of the executable created when the script was compiled.
+            mpirun takes command-line arguments such as -N 5, which would request 5 nodes to run the executable on. </p>
+    </div>
+
+    <div>
+        <h3 style="color:#537391;"><strong>Running Open MPI through a job script</strong></h3>
+
+        1. Create a script. This repository provides a simple script, <i>test_mpi.c</i>,
+        which runs on several CPU cores spanning several compute nodes.
+
+        <h4>test_mpi.c</h4>
+        <pre><code>
+#include &lt;mpi.h&gt;
+#include &lt;stdio.h&gt;
+
+int main(int argc, char** argv) {
+
+        MPI_Init(NULL, NULL);      // initialize MPI environment
+        int world_size; // number of processes
+        MPI_Comm_size(MPI_COMM_WORLD, &world_size);
+
+        int world_rank; // the rank of the process
+        MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
+
+        char processor_name[MPI_MAX_PROCESSOR_NAME]; // gets the name of the processor
+        int name_len;
+        MPI_Get_processor_name(processor_name, &name_len);
+
+        printf("Hello world from processor %s, rank %d out of %d processors\n",
+                processor_name, world_rank, world_size);
+
+        MPI_Finalize(); // finish MPI environment
+}
+
+        </code></pre>
+
+        <p>2.Compile the script using the correct compiler wrapper. In this case, we will compile the script using
+            <code>mpicc test_mpi.c -o test_mpi</code> which creates an executable called <i>test_mpi</i></p>
+
+        <p>3. Prepare the submission script, which is the script that is submitted to the
+            Slurm scheduler as a job in order to run the Open MPI script. This repository provides the script
+            <i>job.sh</i> as an example.</p>
+        In this example, the batch script requests 8 nodes to run on.
+        <h4>job.sh</h4>
+        <pre><code>
+#!/bin/bash
+
+#SBATCH --job-name=mpi_test
+#SBATCH -o mpi_out%j.out
+#SBATCH -e mpi_err%j.err
+#SBATCH -N 3
+#SBATCH --ntasks-per-node=2
+
+echo -e '\n submitted Open MPI job'
+echo 'hostname'
+hostname
+
+# load Open MPI module
+module load openmpi/gcc
+
+# compile the C file
+mpicc test_mpi.c -o test_mpi
+
+# run compiled test_mpi.c file
+mpirun ./test_mpi
+			</code></pre>
+
+        4. Submit the job using
+        <code>sbatch job.sh</code>
+
+        <p>5. Examine the results.</p>
+    </div>
+</div>
+

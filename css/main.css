@@ -1,0 +1,34 @@
+
+.header-button {
+    background-color: #537391;
+    border-color: #537391;
+    color: white;
+}
+
+.header-img {
+    background-image: url(../images/dna.jpg);
+    color: white;
+    text-align: center;
+    padding: 100px;
+}
+
+.header-plain {
+    background-color: #537391;
+    color: white;
+    text-align: center;
+    padding: 100px;
+}
+
+.blue-box {
+    background-color: #537391;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+}
+
+.white-box {
+    padding: 20px;
+    color: #537391;
+    border: 1px solid #777;
+    border-radius: 10px;
+}

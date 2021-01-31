@@ -1,0 +1,93 @@
+---
+layout: default
+title: Using Slurm Scheduler
+---
+<link rel="stylesheet" href="../css/main.css">
+<div class="container">
+    <div class="jumbotron header-plain">
+        <h1>Using Slurm Scheduler</h1>
+    </div>
+    <div>
+        <p>
+            Slurm is the workload manager that is used to process jobs. The Slurm module should be loaded by default on login, but can be loaded by using the command
+                <p style="text-align: center;"><code>module load slurm</code></p>
+            <p>Below, you will find a basic overview of SLURM commands and a simple job submission script construction.
+                More information can be found
+                <a href="https://slurm.schedmd.com/quickstart.html">on the Slurm website.</a>
+                </p>
+
+        <p><code>sacct</code> – Used to report job or job step accounting information about active or completed jobs.</p>
+        <p><code>sbatch</code> – used to submit a job script for later execution. The script will typically contain one or more srun commands to launch parallel tasks.</p>
+        <p><code>scancel</code> – used to cancel a pending or running job or job step. It can also be used to send an arbitrary signal to all processes associated with a running job or job step.</p>
+        <p><code>srun</code> – used to submit a job for execution or initiate job steps in real time. srun has a wide variety of options to specify resource requirements, including: minimum and maximum node count, processor count, and specific nodes to use</p>
+        <p><code>squeue</code> – reports information about jobs in the queue. It displays a list of all active and pending jobs along with information about each job, which can be filtered, sorted, and formatted. By default, it reports the running jobs in priority order, then the pending jobs in priority order.</p>
+        </p>
+    </div>
+    <div>
+        <p>A description of squeue state codes is below:</p>
+        <div>
+                <table class ="table" style="text-align: center; width=100%">
+                    <tr>
+                        <td>R</td>
+                        <td>Running</td>
+                        <td>Job currently has an allocation</td>
+                    </tr>
+                    <tr>
+                        <td>PD</td>
+                        <td>Pending</td>
+                        <td>Job is awaiting resource allocation</td>
+                    </tr>
+                    <tr>
+                        <td>F</td>
+                        <td>Failed</td>
+                        <td>Job terminated with non-zero exit code or other failure condition</td>
+                    </tr>
+                    <tr>
+                        <td>S</td>
+                        <td>Suspended</td>
+                        <td>Job has an allocation, but execution has been suspended</td>
+                    </tr>
+                </table>
+        </div>
+
+    </div>
+    <div>
+        Most users will only need to use a few simple Slurm commands to submit and monitor their jobs. Here is a sample of creating, running, and monitoring a Slurm job script.
+
+        <p>First, create a sample job script.</p>
+        <pre><code>
+#!/bin/bash
+### this sets the job name to TestJob
+#SBATCH --job-name=TestJob
+### -n requests total cores. In this case, we are requesting 2 cores
+#SBATCH -n 2
+### -N requests nodes. In this case, we are requesting 1 node
+#SBATCH -N 1
+### sends the stdout output of the script to a file appended with the job ID
+#SBATCH --output job%j.out
+### sends the stderr output of the script to a file appended with the job ID
+#SBATCH --error job%j.err
+# demonstrates that you can load a module inside a script. in this case, we are loading matlab
+module load matlab
+# prints the hostname
+echo "hostname"
+hostname
+# prints the current date
+echo "current date"
+date
+echo "done"
+        </code></pre>
+        <p>Then, submit the job script to the scheduler.</p>
+        <p style="text-align: center;"><code>sbatch TestJob.sh</code></p>
+        <p>Check the status of your job by using the squeue command. The below command filters the output so that it only shows jobs submitted by your username.</p>
+        <p style="text-align: center;"><code>squeue -u < username ></code></p>
+        <p>
+            The output will show information about the jobs that are running, including the jobID, name of the job, user who submitted the job, state and time of the job, number of nodes, and Nodelist.
+            The jobID is a unique identifier that is used by many Slurm commands when actions must be taken about one particular job. For example, users can cancel a job they submitted by using the scancel command.
+            Time signifies the time the job has been running until now. Node is the number of nodes which are allocated to the job, while the Nodelist column lists the nodes which have been allocated for running jobs.
+            For pending jobs, that column gives the reason why the job is pending. Each job is assigned a priority depending on several parameters whose details are beyond the scope of this document.
+        </p>
+        <p>Once the job is finished running, you can check the output of the program by using the command:</p>
+        <p style="text-align: center;"><code>cat < jobid >.out</code></p>
+    </div>
+</div>

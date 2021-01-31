@@ -1,0 +1,116 @@
+---
+layout: default
+title: Getting Started
+---
+<link rel="stylesheet" href="../css/main.css">
+<div class="container">
+    <div class="jumbotron header-plain">
+        <h1>Connecting to RC Systems</h1>
+    </div>
+    <div>
+        <h3 style="color:#537391;"><strong>Getting Started</strong></h3>
+        <p>
+            To gain access to the RC systems, users must have two-factor authentication enabled through a Duo account
+            <a href="https://sc.edu/about/offices_and_divisions/division_of_information_technology/security/sc_technologies/mfa.php">(more
+                information here)</a>
+            and a SSH client. MacOSX and Linux systems come with a SSH client installed, while Microsoft Windows systems
+            will need one installed.
+            We recommend the <a href="https://ccm.net/download/download-1423-ssh-secure-shell-windows">SSH Secure Shell
+            Client</a>,
+            as it has a file manager built into it, but users can also use
+            <a href="https://www.putty.org/">PuTTY</a>.
+        </p>
+        <p>
+            From the Linux/MacOSX/SSH client command line, type in the following command to connect:
+            <br/>
+        <p style="text-align: center;"><code>ssh -p 222 username@servername.sc.edu</code></p>
+        where username is the username assigned when your account is created, and servername is the appropriate server
+        host name. Available systems are listed below.
+        <div class="panel panel-default" style="text-align: center">
+            <div class="panel-body">
+                login.rci.sc.edu
+                <br/>
+                maxwell.cec.sc.edu
+                <br/>
+                planck.psc.sc.edu
+                <br/>
+                bolden.sc.edu
+                <br/>
+                nick.cec.sc.edu
+            </div>
+        </div>
+        All systems use SSH on port 222
+        </p>
+        <p>
+            To enable graphical programs on the cluster, add the -X option to the above ssh command.
+            This enables transparent forwarding of X applications to your local screen, which directs the communication
+            through an encrypted tunnel.
+        </p>
+        <p>
+            You will then be prompted for your password, provided at account creation, and Duo authentication.
+            Once authenticated, you will be connected to a login node.
+        </p>
+        <p>
+            After your initial login, change your password using the command <code>passwd</code> on a login node. Your
+            password should contain:
+        <li>At least 8 characters</li>
+        <li>A mixture of upper and lower case letters</li>
+        <li>At least one digit and at least one special characters</li>
+        </p>
+    </div>
+
+    <div>
+        <h3 style="color:#537391;"><strong>Login Nodes</strong></h3>
+        <p>
+            A login node is connected to the external network and to the private cluster network, but does not run jobs
+            itself. It is intended for:
+
+        <li>compiling code</li>
+        <li>developing applications</li>
+        <li>submitting applications to the cluster for execution</li>
+        <li>monitoring running applications</li>
+        <li>post-processing and managing data.</li>
+
+        <p><strong>DO NOT RUN JOBS ON HEADNODES. Multiple offenses will result in account suspension.</strong></p>
+        </p>
+    </div>
+
+    <div>
+        <h3 style="color:#537391;"><strong>Basic Tasks</strong></h3>
+        <p>
+            Once you have logged into a cluster, you will navigate and execute programs through the Bash shell. Here is
+            a short list of useful BASH commands for users:
+            <br/>
+            <p>
+            <code>pwd</code> displays your current directory
+            <br/>
+            <code>ls</code> displays what files are in your current directory
+            <br/>
+            <code>cd ..</code> moves you up one level to the folder above your current directory
+            <br/>
+            <code>cd ../..</code> moves up two levels
+            <br/>
+            <code>cd</code> move to your home directory
+    </p>
+        </p>
+
+        <p>
+            For further information on how to use the Bash shell, see the following resources:
+            <li><a href="http://moo.nac.uci.edu/~hjm/biolinux/Linux_Tutorial_12.html#_introduction">http://moo.nac.uci.edu/~hjm/biolinux/Linux_Tutorial_12.html#_introduction</a></li>
+            <li><a href="http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html">http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html</a></li>
+            <li><a href="http://www.ee.surrey.ac.uk/Teaching/Unix/">http://www.ee.surrey.ac.uk/Teaching/Unix/</a></li>
+        </p>
+    </div>
+    <div>
+        To transfer files from the cluster to your computer, or from your computer to the cluster, use the command <code>scp</code>.
+
+        <p>For example, to copy from the cluster to your computer, use the command</p>
+
+        <p style="text-align: center;"><code>scp -P 222 username@login.rci.sc.edu:~/path/to/file ~/path/to/destination</code></p>
+        The -P argument specifies the port to connect to on the remote host, which in this case is port 222.
+
+        <p>To copy from your computer to the cluster, use the command</p>
+
+        <p style="text-align: center;"><code>scp -P 222 ~/path/to/file  username@login.rci.sc.edu:/~path/to/destination</code></p>
+    </div>
+</div>

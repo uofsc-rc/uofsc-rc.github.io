@@ -1,0 +1,71 @@
+---
+layout: default
+title: Amber Tutorial
+---
+<link rel="stylesheet" href="../css/main.css">
+<div class="container">
+    <div class="jumbotron header-img">
+        <h1>Amber Tutorial</h1>
+        <p><a class="btn btn-primary btn-lg header-button"
+              href="https://github.com/torkian/slurm-amber/tree/amber_tutorial">
+            Find the files in this tutorial on our GitHub!</a></p>
+    </div>
+    <p>
+        “Amber” refers to two things: a set of molecular mechanical force fields for the simulation of biomolecules
+        (which are in the public domain, and are used in a variety of simulation programs);
+        and a package of molecular simulation programs which includes source code and demos.
+        Amber is comprised of preparatory, simulation, and analysis programs that can be utilized in order to carry out
+        these molecular simulations.
+        <a href="http://ambermd.org/doc12/Amber16.pdf">Documentation for Amber can be found on its official website.</a>
+    </p>
+    <p>Currently, Amber version 16 is available on the cluster. </p>
+    <div>
+        <h3 style="color:#537391;"><strong>Basics</strong></h3>
+        <p>To use Amber, first load the Amber and Open MPI modules using the command:
+        <p style="text-align: center;"><code>module load amber/gcc/openmpi</code></p>
+        which will load both Amber version 16 and Open MPI.</p>
+
+        <p><i>sander</i>, one of the Amber simulation programs, needs 3 specified files to run.
+            An input file, a parameter/topology file, and the set of initial coordinates for the run.
+            To run the <i>sander</i> program, use the following command:</p>
+
+        <p style="text-align: center;"><code>mpirun sander.MPI -O -i mdin -p prmtop -c nc</code></p>
+        <p>where <i>mdin</i> is the name of the input file, <i>prmtop</i> is the name of the parameter/topology
+            file, and <i>nc</i> is the set of initial coordinates for the run.
+            The -O argument tells Amber to overwrite all output files,
+            as the default behavior is to quit if any output files already exist.
+            Output will be written to output files mdout, and restrt,
+            which will contain the final set of coordinates from the run.
+            To specify names for mdout and restrt, use the arguments -o and -r,
+            respectively, with the name of the file you wish to be created. </p>
+        <p>Other optional arguments, as well as arguments for other Amber preparatory,
+            simulation, and analysis programs, can be found in the Amber documentation.</p>
+    </div>
+
+    <div>
+        <h3 style="color:#537391;"><strong>GPU</strong></h3>
+        <p>
+            Amber can also be run using GPU acceleration.
+            Using GPUs will massively accelerate PMEMD (Particle Mesh Ewald Molecular Dynamics),
+            which is one of the primary molecular dynamics engines within the AMBER Software suite that
+            improves the performance of frequently used methods of sander.
+        </p>
+        <p>To run PMEMD with GPU acceleration, first load Cuda and Amber, using the commands</p>
+        <p style="text-align: center;"><code>
+            module load cuda/8.0<br/>
+            module load amber/gcc/gpu/16</code></p>
+
+        <p>PMEMD requires three files to run, the same files as <i>sander</i> listed above.
+            An input file, a parameter/topology file, and the set of initial coordinates for the run.
+            To run PMEMD, use the following command:</p>
+        <p style="text-align: center;"><code>pmemd.cuda -O -i mdin -p prmtop -c nc</code></p>
+
+        <p>where <i>mdin</i> is the name of the input file, <i>prmtop</i> is the name of the parameter/topology
+            file, and <i>nc</i> is the set of initial coordinates for the run.
+            Output will be written to output files with default names mdout and resrt unless otherwise specified using
+            command line arguments. </p>
+        <p>To run a program on a GPU node using the scheduler, be sure to request a GPU resource in the job script
+            parameters, using the command:</p>
+        <p style="text-align: center;"><code>#SBATCH --gres=gpu:1</code></p>
+    </div>
+</div>

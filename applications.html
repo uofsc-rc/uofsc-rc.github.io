@@ -1,0 +1,460 @@
+---
+layout: default
+title: Scientific Applications
+---
+<link rel="stylesheet" href="css/main.css">
+
+<div class="container">
+    <div class="jumbotron header-plain">
+        <h1>Scientific Applications</h1>
+        A list of applications downloaded on the cluster, and a description of what they do.
+    </div>
+    <div>
+        <div style="border:2px solid #777; border-radius:10px; padding-left:20px;">
+            <h2 style="color:#537391;"><strong>Bioinformatics</strong></h2>
+            <p><a href="https://github.com/CK7/abawaca">Abawaca (1.07)</a>– abawaca (A Binning Algorithm Without A Cool
+                Acronym) is a binning program that can take advantage of different types of information such as
+                differential coverage and DNA signature </p>
+            <p><a href="http://www.bcgsc.ca/platform/bioinfo/software/abyss">Abyss (2.1.0, 2.15)</a>– ABySS is a parallel,
+                paired-end sequence assembler that is designed for short reads. The single-processor version is useful
+                for assembling genomes up to 100 Mbases in size. The parallel version is implemented using MPI and is
+                capable of assembling larger genomes. </p>
+            <p><a href="https://afni.nimh.nih.gov/">AFNI (17.2.16)</a>– AFNI is a set of C programs for processing,
+                analyzing, and displaying functional MRI (FMRI) data </p>
+            <p><a href="https://github.com/ANGSD/angsd">angsd (0.932)</a>– ANGSD is a software for analyzing next generation sequencing data. The software can handle a number of different input types from mapped reads to imputed genotype probabilities. Most methods take genotype uncertainty into account instead of basing the analysis on called genotypes. This is especially useful for low and medium depth data. The software is written in C++ and has been used on large sample sizes. </p>
+            <p><a href="http://picsl.upenn.edu/software/ants/">Ants (2.2)</a>– Advanced Normalization Tools (ANTs)
+                extracts information from complex datasets that include imaging. </p>
+            <p><a href="http://www1.montpellier.inra.fr/CBGP/software/baypass/index.html">baypass (3.36)</a>– The package BayPass is a population genomics software which is primarily aimed at identifying genetic markers subjected to selection and/or associated to population-specific covariates (e.g., environmental variables, quantitative or categorical phenotypic characteristics).</p>
+            <p><a href="https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbmap-guide/">BBMAP (37.93,
+                    38.16)</a>– BBMap is a splice-aware global aligner for DNA and RNA sequencing reads. It can align reads
+                from all major platforms – Illumina, 454, Sanger, Ion Torrent, Pac Bio, and Nanopore. BBMap has a large
+                array of options, described in its shell script. It can output many different statistics files, such as
+                an empirical read quality histogram, insert-size distribution, and genome coverage, with or without
+                generating a sam file. </p>
+            <p><a href="https://emea.support.illumina.com/content/dam/illumina-support/documents/documentation/software_documentation/bcl2fastq/bcl2fastq2-v2-20-software-guide-15051736-03.pdf">bcl2fastq2 (2.20)</a>– Demultiplexes sequencing data and converts base call (BCL) files into FASTQ files.</p>
+            <p><a href="https://bedtools.readthedocs.io/en/latest/">Bedtools (2.27.1)</a>– The bedtools utilities are a
+                swiss-army knife of tools for a wide-range of genomics analysis tasks. The most widely-used tools enable
+                genome arithmetic: that is, set theory on the genome. For example, bedtools allows one to intersect,
+                merge, count, complement, and shuffle genomic intervals from multiple files in widely-used genomic file
+                formats such as BAM, BED, GFF/GTF, VCF. </p>
+            <p><a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">blast (2.6.0, 2.10.0)</a>– Basic Local Alignment Search Tool
+                is a sequence comparison algorithm optimized for speed used to search sequence databases for optimal
+                local alignments to a query. </p>
+            <p><a href="https://genome.ucsc.edu/FAQ/FAQblat.html">blat (35)</a>– BLAT on DNA is designed to quickly find
+                sequences of 95% and greater similarity of length 25 bases or more. It may miss more divergent or
+                shorter sequence alignments. It will find perfect sequence matches of 20 bases. BLAT on proteins finds
+                sequences of 80% and greater similarity of length 20 amino acids or more. </p>
+            <p><a href="http://bowtie-bio.sourceforge.net/bowtie2/index.shtml">bowtie2 (1.2.1.1, 2.3.2)</a>– Bowtie is
+                an ultrafast, memory-efficient short read aligner. It aligns short DNA sequences (reads) to the human
+                genome at a rate of over 25 million 35-bp reads per hour. Bowtie indexes the genome with a
+                Burrows-Wheeler index to keep its memory footprint small: typically about 2.2 GB for the human genome
+                (2.9 GB for paired-end). </p>
+            <p><a href="http://bio-bwa.sourceforge.net/">bwa (3.16)</a>– BWA is a program for aligning sequencing reads
+                against a large reference genome (e.g. human genome). It has two major components, one for read shorter
+                than 150bp and the other for longer reads. </p>
+            <p><a href="https://bioconda.github.io/recipes/cat/README.html">cat (5.0.3)</a>– CAT/BAT: tool for taxonomic classification of contigs and metagenome-assembled genomes (MAGs) </p>
+             <p><a href="https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger">cellranger (3.0.2, 3.1.0, 4.0.0)</a>– CCell Ranger is a set of analysis pipelines that process Chromium single-cell RNA-seq output to align reads, generate feature-barcode matrices and perform clustering and gene expression analysis. </p>           
+            <p><a href="http://ecogenomics.github.io/CheckM/">checkm (1.0.9)</a>– Assess the quality of microbial
+                genomes recovered from isolates, single cells, and metagenomes </p>
+            <p><a href="https://github.com/BinPro/CONCOCT">concoct (0.4.0)</a>– A program for unsupervised binning of
+                metagenomic contigs by using nucleotide composition, coverage data in multiple samples and linkage data
+                from paired end reads. </p>
+            <p><a href="http://cole-trapnell-lab.github.io/cufflinks/">cufflinks (2.2.1)</a>– Cufflinks assembles
+                transcripts, estimates their abundances, and tests for differential expression and regulation in RNA-Seq
+                samples. It accepts aligned RNA-Seq reads and assembles the alignments into a parsimonious set of
+                transcripts. Cufflinks then estimates the relative abundances of these transcripts based on how many
+                reads support each one, taking into account biases in library preparation protocols. </p>
+            <p><a href="https://github.com/cmks/DAS_Tool">DAS_Tool (1.1)</a>– DAS Tool is an automated method that
+                integrates the results of a flexible number of binning algorithms to calculate an optimized,
+                non-redundant set of bins from a single assembly. </p>
+            <p><a href="https://bench.cs.vt.edu/deeparg">deeparg (0.7.9.58)</a>– DeepARG is a machine learning solution that uses deep learning to characterize and annotate antibiotic resistance genes in metagenomes. It is composed of two models for two types of input: short sequence reads and gene-like sequences.</p>
+             <p><a href="https://github.com/bbuchfink/diamond">diamond (0.9.24)</a>– DIAMOND is a sequence aligner for protein and translated DNA searches, designed for high performance analysis of big sequence data.</p>     
+             <p><a href="http://emboss.sourceforge.net/download/">emboss (6.6.0)</a>– EMBOSS is "The European Molecular Biology Open Software Suite". EMBOSS is a free Open Source software analysis package specially developed for the needs of the molecular biology (e.g. EMBnet) user community.</p>             
+            <p><a href="https://genome.sph.umich.edu/wiki/EPACTS">epacts (3.2.6)</a>– EPACTS (Efficient and
+                Parallelizable Association Container Toolbox) is a versatile software pipeline to perform various
+                statistical tests for identifying genome-wide association from sequence data through a user-friendly
+                interface, both to scientific analysts and to method developers. </p>
+            <p><a href="http://arthropods.eugenes.org/EvidentialGene/evigene/">evigene (may2018)</a>– EvidentialGene is a genome informatics project for "Evidence Directed Gene Construction for Eukaryotes", for constructing high quality, accurate gene sets for animals and plants (any eukaryotes).</p>            
+            <p><a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC (0.11.5)</a>– FastQC aims to
+                provide a simple way to do some quality control checks on raw sequence data coming from high throughput
+                sequencing pipelines </p>
+            <p><a href="https://surfer.nmr.mgh.harvard.edu/">freesurfer (2017, 2020 beta)</a>– FreeSurfer is a set of tools for
+                analysis and visualization of structural and functional brain imaging data </p>
+            <p><a href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki">fsl (5.0.10)</a>– FSL is a comprehensive library of
+                analysis tools for FMRI, MRI and DTI brain imaging data. </p>
+            <p><a href="https://software.broadinstitute.org/gatk/">GATK (3.80, 4.0.5.1, 4.1.3.0)</a>– The Genome Analysis Toolkit
+                or GATK is a software package developed at the Broad Institute to analyze high-throughput sequencing
+                data </p>
+          <p><a href="http://kaiju.binf.ku.dk/">kaiju (1.72)</a>– Kaiju is a program for sensitive taxonomic classification of high-throughput sequencing reads from metagenomic whole genome sequencing or metatranscriptomics experiments. </p>
+            <p><a href="https://pachterlab.github.io/kallisto/about">kallisto 0.44.0</a>– kallisto is a program for
+                quantifying abundances of transcripts from RNA-Seq data, or more generally of target sequences using
+                high-throughput sequencing reads. It is based on the novel idea of pseudoalignment for rapidly
+                determining the compatibility of reads with targets, without the need for alignment. </p>
+            <p><a href="https://lammps.sandia.gov/">lammps (mar 2017, aug 2019)</a>– LAMMPS is a classical molecular dynamics
+                code, and an acronym for Large-scale Atomic/Molecular Massively Parallel Simulator. LAMMPS has
+                potentials for soft materials (biomolecules, polymers) and solid-state materials (metals,
+                semiconductors) and coarse-grained or mesoscopic systems. It can be used to model atoms or, more
+                generically, as a parallel particle simulator at the atomic, meso, or continuum scale. </p>
+            <p><a href="https://support.10xgenomics.com/genome-exome/software/pipelines/latest/what-is-long-ranger">longranger (2.2.2)</a>– Long Ranger is a set of analysis pipelines that processes Chromium sequencing output to align reads and call and phase SNPs, indels, and structural variants. </p>
+            <p><a href="https://github.com/arq5x/lumpy-sv">lumpy (0.2.13)</a>– Lumpy is a general probabilistic framework for structural variant discovery. </p>
+            <p><a href="https://sourceforge.net/projects/maxbin/">maxbin (2.2.4)</a>– MaxBin is a software for binning
+                assembled metagenomic sequences based on an Expectation-Maximization algorithm. </p>
+            <p><a href="https://github.com/voutcn/megahit">megahit (1.1.3, 1.2.7)</a>– An ultra-fast single-node solution for
+                large and complex metagenomics assembly via succinct de Bruijn graph </p>
+            <p><a href="https://bitbucket.org/berkeleylab/metabat">metabat (2.12.1)</a>– A robust statistical framework
+                for reconstructing genomes from metagenomic data. </p>
+            <p><a href="https://github.com/lakinsm/meta-marc">meta-marc (0)</a>– Metagenomic Markov Models for Antimicrobial Resistance Characterization. </p>
+            <p><a href="https://sourceforge.net/p/mira-assembler/wiki/Home/">miRA (1.2.0)</a>– MIRA is a whole genome
+                shotgun and EST sequence assembler </p>
+            <p><a href="http://mirexpress.mbc.nctu.edu.tw/">miRExpress (2.1.4)</a>– A database-supported, efficient and
+                flexible tool for detecting miRNA expression profiles. </p>
+            <p><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0143066">MiRge (2018)</a>– A
+                fast, smart small RNA-seq solution to process samples in a highly multiplexed fashion. miRge employs a
+                Bayesian alignment approach, whereby reads are sequentially aligned against customized mature miRNA,
+                hairpin miRNA, noncoding RNA and mRNA sequence libraries. </p>
+            <p><a href="http://blue11.bch.msu.edu/mmtsb/Main_Page">MMTSB (2019)</a>– Multiscale Modeling Tools for Structural Biology toolset. </p>
+            <p><a href="http://nbisweden.github.io/MrBayes/">mrbayes (3.2.7a)</a>– MrBayes is a program for Bayesian inference and model choice across a wide range of phylogenetic and evolutionary models. MrBayes uses Markov chain Monte Carlo (MCMC) methods to estimate the posterior distribution of model parameters. </p>
+            <p><a href="https://www.mrtrix.org/">Mrtix (3)</a>– MRtrix3 provides a set of tools to perform various types of diffusion MRI analyses, from various forms of tractography through to next-generation group-level analyses. It is designed with consistency, performance, and stability in mind, and is freely available under an open-source license. It is developed and maintained by a team of experts in the field, fostering an active community of users from diverse backgrounds. </p>
+            <p><a href="http://mummer.sourceforge.net/">MUMmer (3.23)</a>– MUMmer is a system for rapidly aligning entire genomes, whether in complete or draft form. </p>
+            <p><a href="https://www.ks.uiuc.edu/Research/namd/2.9/ug/node4.html">namd (2020-03-20)</a>– NAMD is a parallel molecular dynamics program for UNIX platforms designed for high-performance simulations in structural biology. </p>
+            <p><a href="https://github.com/mfumagalli/ngsTools">ngsTools (1.02)</a>– NGS (Next-Generation Sequencing) technologies have revolutionized population genetic research by enabling unparalleled data collection from the genomes or subsets of genomes from many individuals.</p>
+            <p><a href="https://www.ebi.ac.uk/~zerbino/oases/">oases (0.2.09)</a>– Oases is a de novo transcriptome
+                assembler designed to produce transcripts from short read sequencing technologies, such as Illumina,
+                SOLiD, or 454 in the absence of any genomic assembly. </p>
+            <p><a href="http://zzz.bwh.harvard.edu/plink/">plink (6.2)</a>– PLINK is a whole genome association analysis toolset, designed to perform a range of basic, large-scale analyses in a computationally efficient manner</p>
+            <p><a href="https://broadinstitute.github.io/picard/">picard (2017, 2018)</a>– A set of Java command line tools
+                for manipulating high-throughput sequencing data (HTS) data and formats </p>
+            <p><a href="https://matsen.fhcrc.org/pplacer/index.html">Pplacer (1.1)</a>– Pplacer places query sequences
+                on a fixed reference phylogenetic tree to maximize phylogenetic likelihood or posterior probability
+                according to a reference alignment. </p>
+            <p><a href="http://wasabiapp.org/software/prank/">prank (v 170427)</a>– PRANK is a probabilistic multiple alignment program for DNA, codon and amino-acid sequences. It’s based on a novel algorithm that treats insertions correctly and avoids over-estimation of the number of deletion events.</p>            
+            <p><a href="https://github.com/hyattpd/Prodigal">prodigal (2.6.3)</a>– Prodigal (Prokaryotic Dynamic
+                Programming Genefinding Algorithm) is a microbial (bacterial and archaeal) gene finding program </p>
+            <p><a href="https://deweylab.github.io/RSEM/">rsem (1.3.0)</a>– Accurate quantification of gene and isoform
+                expression from RNA-Seq data </p>
+            <p><a href="https://github.com/GregoryFaust/samblaster">samblaster (0.1.26)</a>– samblaster is a tool to mark duplicates and extract discordant and split reads from sam files. </p>
+            <p><a href="https://github.com/GATB/simka">simka (1.5.1)</a>– Simka is a de novo comparative metagenomics tool. Simka represents each dataset as a k-mer spectrum and compute several classical ecological distances between them. </p>
+             <p><a href="http://samtools.sourceforge.net/">samtools (1.5)</a>– SAM (Sequence Alignment/Map) format is a
+                generic format for storing large nucleotide sequence alignments </p>           
+            <p><a href="http://snpeff.sourceforge.net/">snpEff (12_2017)</a>– Genetic variant annotation and effect
+                prediction toolbox </p>
+            <p><a href="https://github.com/rpiskol/SNPiR">SNPiR (12_2017)</a>– Identifies single nucleotides
+                polymorphisms (SNPs) in RNA-seq data. SNPiR consists of (1) a modified RNA-seq read-mapping procedure
+                that allows alignment of reads to the reference in a splice-aware manner, (2) variant calling using the
+                Genome Analysis Toolkit (GATK) and (3) vigorous filtering of false-positive calls. </p>
+            <p><a href="https://bioinfo.lifl.fr/RNA/sortmerna/">sortmerna (2.1b)</a>– SortMeRNA is a program tool for filtering, mapping and OTU-picking NGS reads in metatranscriptomic and metagenomic data. The core algorithm is based on approximate seeds and allows for fast and sensitive analyses of nucleotide sequences. The main application of SortMeRNA is filtering ribosomal RNA from metatranscriptomic data. </p>
+            <p><a href="http://soap.genomics.org.cn/soapdenovo.html">SOAPdenovo (r240)</a>– SOAPdenovo is a novel
+                short-read assembly method that can build a de novo draft assembly for the human-sized genomes. The
+                program is specially designed to assemble Illumina GA short reads. It creates new opportunities for
+                building reference sequences and carrying out accurate analyses of unexplored genomes in a cost
+                effective way. </p>
+            <p><a href="https://catchenlab.life.illinois.edu/stacks/">stacks (2.4.1)</a>– Stacks is a software pipeline for building loci from short-read sequences, such as those generated on the Illumina platform. Stacks was developed to work with restriction enzyme-based data, such as RAD-seq, for the purpose of building genetic maps and conducting population genomics and phylogeography. </p>
+            <p><a href="http://cab.spbu.ru/software/spades/">spades (3.11, 3.12)</a>– SPAdes – St. Petersburg genome
+                assembler – is intended for both standard isolates and single-cell MDA bacteria assemblies. </p>
+            <p><a href="https://github.com/alexdobin/STAR">star (2.5, 2.7.2b, star-fusion)</a>– RNAseq aligner </p>
+            <p><a href="https://ccb.jhu.edu/software/stringtie/">stringtie (1.3.3)</a>– StringTie is a fast and highly
+                efficient assembler of RNA-Seq alignments into potential transcripts. It uses a novel network flow
+                algorithm as well as an optional de novo assembly step to assemble and quantitate full-length
+                transcripts representing multiple splice variants for each gene locus. </p>
+            <p><a href="http://subread.sourceforge.net/">subread(1.5.3)</a>– The Subread software package is a tool kit
+                for processing next-gen sequencing data. It includes Subread aligner, Subjunc exon-exon junction
+                detector and featureCounts read summarization program </p>
+            <p><a href="https://github.com/fritzsedlazeck/SURVIVOR">survivor (1.0.7)</a>– SURVIVOR is a tool set for simulating/evaluating SVs, merging and comparing SVs within and among samples, and includes various methods to reformat or summarize SVs. </p>
+            <p><a href="https://github.com/samtools/tabix">tabix (0.2.6)</a>– C library for high-throughput sequencing data formats.</p>
+            <p><a href="https://ccb.jhu.edu/software/tophat/index.shtml">tophat (2.1.1)</a>– TopHat is a fast splice
+                junction mapper for RNA-Seq reads. It aligns RNA-Seq reads to mammalian-sized genomes using the ultra
+                high-throughput short read aligner Bowtie, and then analyzes the mapping results to identify splice
+                junctions between exons. </p>
+            <p><a href="http://www.bcgsc.ca/platform/bioinfo/software/trans-abyss">transabyss (2.0.1)</a>– de novo
+                assembly of RNA-Seq data using ABySS </p>
+            <p><a href="http://www.usadellab.org/cms/?page=trimmomatic">trimmomatic (0.36)</a>– a flexible read trimming
+                tool for Illumina NGS data. </p>
+            <p><a href="https://github.com/trinityrnaseq/trinityrnaseq">Trinity (2.6.6, 2.8.4)</a>– Trinity, developed at the
+                Broad Institute and the Hebrew University of Jerusalem, represents a novel method for the efficient and
+                robust de novo reconstruction of transcriptomes from RNA-seq data. Trinity combines three independent
+                software modules: Inchworm, Chrysalis, and Butterfly, applied sequentially to process large volumes of
+                RNA-seq reads. Trinity partitions the sequence data into many individual de Bruijn graphs, each
+                representing the transcriptional complexity at at a given gene or locus, and then processes each graph
+                independently to extract full-length splicing isoforms and to tease apart transcripts derived from
+                paralogous genes. </p>
+            <p><a href="https://github.com/cmmr/virmap">Virmap (2020)</a>– Maximal viral information recovery from sequence data </p>
+                    <p><a href="https://github.com/mskcc/vcf2maf">vcf2maf (2017)</a>– Convert a VCF into a MAF, where each
+                variant is annotated to only one of all possible gene isoforms </p>
+        <p><a href="https://www.ks.uiuc.edu/Research/vmd/">vmd (1.9.3)</a>– VMD is a molecular visualization program for displaying, animating, and analyzing large biomolecular systems using 3-D graphics and built-in scripting.</p>
+        </div>
+    </div>
+    <div style="padding-top:10px;">
+        <div style="border:2px solid #777; border-radius:10px; padding-left:20px;">
+            <h2 style="color:#537391;"><strong>Chemistry/Material Sciences</strong></h2>
+            <p>
+                <a href="http://www.feasol.com/solutions/engineering-simulation/products/abaqus/?gclid=EAIaIQobChMI3ZjaqKLM3QIViZ6fCh2mQw2AEAAYASAAEgL8r_D_BwE">Abaqus
+                    (V6R2017, V6R2018, V6R2020)</a>– Abaqus is a finite element analysis software used for engineering simulations. </p>
+            <p>
+                <a href="https://www.abinit.org/">abinit (8.10.2)</a>– ABINIT is a software suite to calculate the optical, mechanical, vibrational, and other observable properties of materials. Starting from the quantum equations of density functional theory, you can build up to advanced applications with perturbation theories based on DFT, and many-body Green's functions (GW and DMFT). </p>
+            <p><a href="https://www.brown.edu/Departments/Engineering/Labs/avdw/atat/">atat (3.36)</a>– Alloy Theoretic Automated Toolkit (ATAT) refers to a collection of alloy theory tools developped by Axel van de Walle </p>
+            <p><a href="http://ambermd.org/">Amber(16)</a>– “Amber” refers to two things: a set of molecular mechanical
+                force fields for the simulation of biomolecules (which are in the public domain, and are used in a
+                variety of simulation programs); and a package of molecular simulation programs which includes source
+                code and demos </p>
+            <p><a href="https://convergecfd.com/">converge (2.4.27)</a>– Computational fluid dynamics (CFD) simulator for physical processes. </p>
+            <p><a href="https://github.com/aoterodelaroza/critic2">critic2</a>– Critic2 is a program for the manipulation and analysis of structures and chemical information in molecules and periodic solids. Critic2 can be used to read and transform between file formats, and to perform operations on molecular and crystal structures. </p>
+            <p><a href="http://www.dftbplus.org/">DFTB+ (18.2, 19.1, 20.2)</a>– DFTB+ is a fast and efficient versatile quantum
+                mechanical simulation software package. Using DFTB+ you can carry out quantum mechanical simulations
+                similar to density functional theory but in an approximate way, typically gaining around two orders of
+                magnitude in speed. </p>
+            <p><a href="http://classic.chem.msu.su/gran/gamess/index.html">firefly (8.2.0)</a>– Firefly is a freely
+                available ab initio and DFT computational chemistry program developed to offer high performance on
+                Intel-compatible x86, AMD64, and EM64T processors. </p>
+            <p><a href="https://www.msg.chem.iastate.edu/gamess/capabilities.html">gamess (apr2017)</a>– The General
+                Atomic and Molecular Electronic Structure System (GAMESS) is a general ab initio quantum chemistry
+                package. </p>
+            <p><a href="http://gwyddion.net/">gwyddion (2.5.0)</a>– Gwyddion is a modular program for SPM (scanning
+                probe microscopy) data visualization and analysis. Primarily it is intended for the analysis of height
+                fields obtained by scanning probe microscopy techniques (AFM, MFM, STM, SNOM/NSOM) and it supports.
+                However, it can be used for general height field and (greyscale) image processing, for instance for the
+                analysis of profilometry data or thickness maps from imaging spectrophotometry. </p>
+            <p><a href="https://lammps.sandia.gov/">lammps (mar 2017)</a>– LAMMPS is a classical molecular dynamics
+                code, and an acronym for Large-scale Atomic/Molecular Massively Parallel Simulator. LAMMPS has
+                potentials for soft materials (biomolecules, polymers) and solid-state materials (metals,
+                semiconductors) and coarse-grained or mesoscopic systems. It can be used to model atoms or, more
+                generically, as a parallel particle simulator at the atomic, meso, or continuum scale. </p>
+            <p><a href="http://mcx.space/">mmc-mcx (2017)</a>– A GPU-accelerated photon transport simulator </p>
+            <p><a href="http://www.nwchem-sw.org/index.php/Main_Page">nwchem (6.8)</a>– NWChem aims to provide its users
+                with computational chemistry tools that are scalable both in their ability to treat large scientific
+                computational chemistry problems efficiently, and in their use of available parallel computing resources
+                from high-performance parallel supercomputers to conventional workstation clusters. </p>
+            <p><a href="https://www.quantum-espresso.org/">qe (gcc (6.2.0, 6.3.0-developer), intel (6.4.1, 6.5))</a>– a software suite for ab initio quantum
+                chemistry methods of electronic-structure calculation and materials modeling, distributed for free under
+                the GNU General Public License. It is based on Density Functional Theory, plane wave basis sets, and
+                pseudopotentials. </p>
+             <p><a href="https://orcaforum.kofo.mpg.de/app.php/portal">orca (4.2.1)</a>– ORCA is an ab initio quantum chemistry program package that contains modern electronic structure methods including density functional theory, many-body perturbation, coupled cluster, multireference methods, and semi-empirical quantum chemistry methods.</p>           
+            <p><a href="http://www.physics.udel.edu/~szalewic/SAPT/SAPT.html">SAPT (2016.1)</a>– SAPT is a collection of
+                computer codes designed to implement the many-body (body = electron) version of Symmetry-Adapted
+                Perturbation Theory for intermolecular interactions. </p>
+            <p><a href="http://www.shengbte.org/">ShengBTE(1.1.1)</a>– ShengBTE is a software package for solving the Boltzmann Transport Equation for phonons. Its main purpose is to compute the lattice contribution to the thermal conductivity of bulk crystalline solids, but nanowires can also be treated under a hypothesis of diffusive boundary conditions. </p>
+            <p><a href="https://www.vasp.at/">vasp (5.4.4)</a>– intel - The Vienna Ab initio Simulation Package, better
+                known as VASP, is a package for performing ab initio quantum mechanical molecular dynamics using either
+                Vanderbilt pseudopotentials, or the projector augmented wave method, and a plane wave basis set. </p>
+            <p><a href="https://jp-minerals.org/vesta/en/">VESTA (gtk3)</a>– VESTA is a 3D visualization program for structural models, volumetric data such as electron/nuclear densities, and crystal morphologies.</p>
+            <p><a href="http://www.wannier.org/">wannier (2.1.0)</a>– Wannier90 generates maximally-localized Wannier functions and using them to compute advanced electronic properties of materials with high efficiency and accuracy</p>
+        </div>
+    </div>
+    <div style="padding-top:10px;">
+        <div style="border:2px solid #777; border-radius:10px; padding-left:20px;">
+            <h2 style="color:#537391;"><strong>Mathematics</strong></h2>
+            <p><a href="https://www.sharcnet.ca/help/index.php/ACML">ACML 5.3.1</a>– ACML provides a free set of
+                thoroughly optimized and threaded math routines for HPC, scientific, engineering and related
+                compute-intensive applications. ACML is ideal for weather modeling, computational fluid dynamics,
+                financial analysis, oil and gas applications and more. </p>
+            <p><a href="https://www.netlib.org/blacs/">blacs (1.1)</a>– The BLACS (Basic Linear Algebra Communication
+                Subprograms) project is an ongoing investigation whose purpose is to create a linear algebra oriented
+                message passing interface that may be implemented efficiently and uniformly across a large range of
+                distributed memory platforms. </p>
+            <p><a href="https://www.netlib.org/blas/">blas (3.6.0)</a>– The BLAS (Basic Linear Algebra Subprograms) are
+                routines that provide standard building blocks for performing basic vector and matrix operations. The
+                Level 1 BLAS perform scalar, vector and vector-vector operations, the Level 2 BLAS perform matrix-vector
+                operations, and the Level 3 BLAS perform matrix-matrix operations. Because the BLAS are efficient,
+                portable, and widely available, they are commonly used in the development of high quality linear algebra
+                software. </p>
+            <p><a href="https://mc-stan.org/users/interfaces/cmdstan">Cmdstan (2.17)</a>– CmdStan is the command line
+                interface to Stan, a state-of-the-art platform for statistical modeling and high-performance statistical
+                computation. </p>
+            <p><a href="https://www.cmiss.org/cmgui">Cmgui (7.3)</a>– Cmgui is an advanced 3D visualisation software
+                package with modelling capabilities. Cmgui is part of CMISS, a mathematical modelling environment
+                initially developed by the University of Auckland Bioengineering Institute. CMISS stands for Continuum
+                Mechanics, Image analysis, Signal processing and System Identification. </p>
+            <p><a href="http://www.fftw.org/">fftw2 (2.1.5), fftw3 (3.3.4, 3.3.8)–</a>– FFTW is a C subroutine library for
+                computing the discrete Fourier transform (DFT) in one or more dimensions, of arbitrary input size, and
+                of both real and complex data (as well as of even/odd data, i.e. the discrete cosine/sine transforms or
+                DCT/DST). </p>
+            <p><a href="https://www.gnu.org/software/gsl/">gsl (2.4)</a>– The GNU Scientific Library (GSL) is a
+                numerical library for C and C++ programmers. The library provides a wide range of mathematical routines
+                such as random number generators, special functions and least-squares fitting. There are over 1000
+                functions in total with an extensive test suite. </p>
+            <p><a href="http://mcmc-jags.sourceforge.net/">JAGS (4.3.0)</a>– JAGS is Just Another Gibbs Sampler. It is a
+                program for analysis of Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC) simulation.
+                JAGS was written with three aims in mind: To have a cross-platform engine for the BUGS language, to be
+                extensible, allowing users to write their own functions, distributions and samplers, and to be a
+                platform for experimentation with ideas in Bayesian modelling </p>
+            <p><a href="http://www.netlib.org/lapack/">lapack 3.6.0</a> – LAPACK provides routines for solving systems
+                of simultaneous linear equations, least-squares solutions of linear systems of equations, eigenvalue
+                problems, and singular value problems. </p>
+            <p><a href="https://www.mathworks.com/products/matlab.html">matlab (R2017b, R2019a, R2019b, R2020a)</a>– MATLAB® is a high-level
+                language and interactive environment for numerical computation, visualization, and programming. Using
+                MATLAB, you can analyze data, develop algorithms, and create models and applications. </p>
+            <p><a href="http://glaros.dtc.umn.edu/gkhome/metis/metis/download">metis (5.1.0)</a>– MSerial Graph Partitioning and Fill-reducing Matrix Ordering</p>
+            <p><a href="https://octave.org/doc/v5.2.0/Introduction.html">octave (5.2.0)</a>– GNU Octave is a high-level language primarily intended for numerical computations. It is typically used for such problems as solving linear and nonlinear equations, numerical linear algebra, statistical analysis, and for performing other numerical experiments. It may also be used as a batch-oriented language for automated data processing.</p>
+            <p><a href="https://www.openblas.net/">Openblas (0.2.18)</a>– OpenBLAS is an optimized BLAS library, which
+                is a specification that prescribes a set of low-level routines for performing common linear algebra
+                operations such as vector addition, scalar multiplication, dot products, linear combinations, and matrix
+                multiplication. </p>
+            <p><a href="https://www.r-project.org/">R (3.1.0, 3.3.1, 3.4.1, 3.5.0, 3.5.1, 3.5.2, 3.6.0, 3.6.1, 3.6.2, 4.0.2)</a>– R is a system for statistical computation and
+                graphics. It consists of a language plus a run-time environment with graphics, a debugger, access to
+                certain system functions, and the ability to run programs stored in script files. </p>
+            <p><a href="https://www.scala-sbt.org/">scalapack (2.0.2)</a>– ScaLAPACK is a library of high-performance
+                linear algebra routines for parallel distributed memory machines. ScaLAPACK solves dense and banded
+                linear systems, least squares problems, eigenvalue problems, and singular value problems. </p>
+            <p><a href="https://mc-stan.org/">stan (2.17)</a>– Stan® is a state-of-the-art platform for statistical
+                modeling and high-performance statistical computation. Thousands of users rely on Stan for statistical
+                modeling, data analysis, and prediction in the social, biological, and physical sciences, engineering,
+                and business. </p>
+            <p><a href="https://www.stata.com/stata14/">stata (14)</a>– Stata is a complete, integrated software package
+                that provides all of your data science needs—data manipulation, visualization, statistics, and
+                reproducible reporting. </p>
+            <p><a href="https://vtk.org/">vtk (9.0)</a>– The Visualization Toolkit (VTK) is open source software for manipulating and displaying scientific data. It comes with state-of-the-art tools for 3D rendering, a suite of widgets for 3D interaction, and extensive 2D plotting capability. </p>
+        </div>
+    </div>
+    <div style="padding-top:10px;">
+        <div style="border:2px solid #777; border-radius:10px; padding-left:20px;">
+            <h2 style="color:#537391;"><strong>Developers</strong></h2>
+            <p><a href="https://anaconda.org/">anaconda (python2.7 (2019.10), python 3 (2019.03, 2019.07, 2019.10, 2020.02, ai-lab)</a>– Anaconda (CONDA) is a distribution of for data science, machine learning, and many other packages it manages and deploys. </p>
+            <p><a href="https://github.com/pezmaster31/bamtools">Bamtools (2.4.1)</a>– BamTools provides both a
+                programmer's API and an end-user's toolkit for handling BAM files. </p>
+            <p><a href="https://www.bazel.build/">bazel (2.0.0)</a>– A built and testing tool for Java, C++, Android, iOS, Go, among others. Uses advanced local and distributed caching, optimized dependency analysis and parallel execution. </p>
+            <p><a href="https://samtools.github.io/bcftools/bcftools.html">BCFtools (1.5)</a>– BCFtools is a set of
+                utilities that manipulate variant calls in the Variant Call Format (VCF) and its binary counterpart BCF.
+            </p>
+            <p><a href="https://github.com/beagle-dev/beagle-lib">beagle (1.10)</a>– BEAGLE is a high-performance library that can perform the core calculations at the heart of most Bayesian and Maximum Likelihood phylogenetics packages. It can make use of highly-parallel processors such as those in graphics cards (GPUs) found in many PCs.
+            </p>
+            <p><a href="https://linux.die.net/man/8/bonnie++">Bonnie++ (1.97.1)</a>– Bonnie++ is a free file system
+                benchmarking tool for Unix-like operating systems that is aimed at performing a number of simple tests
+                of hard drive and file system performance. </p>
+            <p><a href="http://caffe.berkeleyvision.org/">caffe (1.0)</a>– Caffe is a deep learning framework </p>
+            <p><a href="https://www.chromium.org/">chromium (2020)</a>– Open source web browser developed by Google. </p>
+            <p><a href="https://cmake.org/">Cmake (3.9.6, 3.12, 3.13.5, 3.18.1)</a>– CMake is an open-source, cross-platform family of tools
+                designed to build, test and package software. CMake is used to control the software compilation process
+                using simple platform and compiler independent configuration files, and generate native makefiles and
+                workspaces that can be used in the compiler environment of your choice. </p>
+            <p><a href="https://developer.nvidia.com/cuda-zone">cuda (7.5, 8.0, 9.0, 9.1, 9.2, 10.0, 10.1, 11.1)</a>– CUDA (aka Compute Unified Device
+                Architecture) is a parallel computing platform and programming model created by NVIDIA and implemented
+                by the graphics processing units (GPUs) that they produce </p>
+            <p><a href="https://linux.die.net/man/1/dos2unix">dos2unix (7.4)</a>– unix2dos is a tool to convert line
+                breaks in a text file from Unix format to DOS format and vice versa. When invoked as unix2dos the
+                program will convert a Unix text file to DOS format, when invoked as dos2unix it will convert a DOS text
+                file to UNIX format </p>
+            <p><a href="https://github.com/OpenGene/fastp">fastp (0.20.0)</a>– A tool designed to provide fast all-in-one preprocessing for FastQ files. This tool is developed in C++ with multithreading supported to afford high performance. </p>
+            <p><a href="http://hannonlab.cshl.edu/fastx_toolkit/">fastx (0.0.13)</a>– The FASTX-Toolkit is a collection of command line tools for Short-Reads FASTA/FASTQ files preprocessing. </p>            
+            <p><a href="https://ffmpeg.org/">ffmpeg (2020_08)</a>– Audio and video recorder and converter. </p>             
+            <p><a href="https://www.gnu.org/software/gcc/">gcc 4.9.1</a>– The GNU Compiler Collection includes front
+                ends for C, C++, Objective-C, Fortran, Java, Ada, and Go, as well as libraries for these languages
+                (libstdc++, libgcj,…). </p>
+            <p><a href="https://www.gnu.org/software/gdb/">Gdb (7.11)</a>– GDB, the GNU Project debugger, allows you to
+                see what is going on `inside' another program while it executes -- or what another program was doing at
+                the moment it crashed. GDB can do four main kinds of things (plus other things in support of these) to
+                help you catch bugs in the act: Start your program, specifying anything that might affect its behavior,
+                make your program stop on specified conditions, examine what has happened when your program has stopped,
+                and change things in your program, so you can experiment with correcting the effects of one bug and go
+                on to learn about another. </p>
+            <p><a href="http://hpc.pnl.gov/globalarrays/">globalarrays (5.4)</a>– Global Arrays (GA) is a Partitioned
+                Global Address Space (PGAS) programming model. It provides primitives for one-sided communication (Get,
+                Put, Accumulate) and Atomic Operations (read increment). It supports blocking and non-blocking
+                primitives, and supports location consistency. </p>
+            <p><a href="https://support.hdfgroup.org/HDF5/">hdf5 (1.6.10, 1.8.17)</a>– HDF5 is a data model, library,
+                and file format for storing and managing data. It supports an unlimited variety of datatypes, and is
+                designed for flexible and efficient I/O and for high volume and complex data. </p>
+            <p><a href="https://www.open-mpi.org/projects/hwloc/">hwloc (1.11.3)</a>– The Portable Hardware Locality
+                (hwloc) software package provides a portable abstraction (across OS, versions, architectures, ...) of
+                the hierarchical topology of modern architectures, including NUMA memory nodes, sockets, shared caches,
+                cores and simultaneous multithreading. It also gathers various system attributes such as cache and
+                memory information as well as the locality of I/O devices such as network interfaces, InfiniBand HCAs or
+                GPUs. </p>
+            <p><a href="https://software.intel.com/en-us/compilers">Intel Compiler</a>– The Intel® Composer XE suites
+                are available in several configurations that combine industry leading C, C++ and Fortran compilers,
+                programming models including Intel® Cilk™ Plus and OpenMP*, performance libraries including Intel® Math
+                Kernel Library (Intel® MKL), Intel® Integrated Performance Primitives (Intel® IPP) and Intel® Threading
+                Building Blocks (Intel® TBB) for leadership application performance on systems using Intel® Core™ and
+                Xeon® processors, Intel® Xeon Phi™ coprocessors and compatible processors. </p>
+            <p><a href="http://www.iozone.org/">Iozone3 (434)</a>– Iozone is a filesystem benchmark tool. The benchmark
+                generates and measures a variety of file operations. Iozone has been ported to many machines and runs
+                under many operating systems. Iozone is useful for performing a broad filesystem analysis of a vendor’s
+                computer platform. </p>
+            <p><a href="https://www.java.com/en/download/faq/develop.xml">JAVA (1.8.0_151, 1.8.0_162)</a>– For Java
+                Developers. Includes a complete JRE plus tools for developing, debugging, and monitoring Java
+                applications. </p>
+            <p><a href="https://www.mpich.org/">mpich (3.2rc2)</a>– MPICH2 is an implementation of the Message-Passing
+                Interface (MPI). The goals of MPICH2 are to provide an MPI implementation for important platforms,
+                including clusters, SMPs, and massively parallel processors. It also provides a vehicle for MPI
+                implementation research and for developing new and better parallel programming environments. </p>
+            <p><a href="http://mvapich.cse.ohio-state.edu/">mvapich2 (2.2rc1)</a>– MVAPICH2 (MPI-3 over InfiniBand) is
+                an MPI-3 implementation based on MPICH ADI3 layer. </p>
+             <p><a href="http://netpbm.sourceforge.net/">netpbm (10.73.30)</a>– Netpbm is a toolkit for manipulation of graphic images, including conversion of images between a variety of different formats. There are over 300 separate tools in the package including converters for about 100 graphics formats </p>           
+            <p><a href="https://www.unidata.ucar.edu/software/netcdf/">netcdf (4.4.0, 4.6.2-c-fortran)</a>– NetCDF is a set of software
+                libraries and self-describing, machine-independent data formats that support the creation, access, and
+                sharing of array-oriented scientific data. </p>
+            <p><a href="https://hewlettpackard.github.io/netperf/">Netperf (2.7.0)</a>– Netperf is a benchmark that can
+                be used to measure the performance of many different types of networking. It provides tests for both
+                unidirectional throughput, and end-to-end latency. </p>
+            <p><a href="http://www.open64.net/">open64 (4.5.2.1)</a>– Open64 has been well-recognized as an
+                industrial-strength production compiler. It is the final result of research contributions from a number
+                of compiler groups around the world. Formerly known as Pro64, Open64 was initially created by SGI from
+                SGI’s MIPSPro compiler, and licensed under the GNU Public License (GPL v2). </p>
+            <p><a href="https://opencv.org/">opencv3(3.1.0, 3.30, 3.4.9), opencv4(4.0.1)</a>– OpenCV (Open Source Computer Vision Library) is an open
+                source computer vision and machine learning software library </p>
+            <p><a href="https://www.open-mpi.org/">openmpi(1.2.9, 1.10.1, 3.1.4, 4.0.1, 4.0.3)</a>– The Open MPI Project is an open source MPI-2
+                implementation that is developed and maintained by a consortium of academic, research, and industry
+                partners. Open MPI is therefore able to combine the expertise, technologies, and resources from all
+                across the High Performance Computing community in order to build the best MPI library available. Open
+                MPI offers advantages for system and software vendors, application developers and computer science
+                researchers. </p>
+            <p><a href="https://www.paraview.org/">paraview (5.8, 5,8.1, 5.9.0)</a>– ParaView is an open-source, multi-platform data analysis and visualization application. ParaView users can quickly build visualizations to analyze their data using qualitative and quantitative techniques. The data exploration can be done interactively in 3D or programmatically using ParaView’s batch processing capabilities. </p>
+            <p><a href="https://pointclouds.org/">PCL (1.10)</a>– The Point Cloud Library (PCL) is a standalone, large scale, open project for 2D/3D image and point cloud processing. </p>
+            <p><a href="https://www.pcre.org/">pcre2 (10.35)</a>– The PCRE (Perl Compatible Regular Expressions) library is a set of functions that implement regular expression pattern matching using the same syntax and semantics as Perl 5. PCRE has its own native API, as well as a set of wrapper functions that correspond to the POSIX regular expression API. </p>
+            <p><a href="https://cme.h-its.org/exelixis/web/software/pear/doc.html">pear (0.9.11)</a>– PEAR is an ultrafast, memory-efficient and highly accurate pair-end read merger. It is fully parallelized and can run with as low as just a few kilobytes of memory. </p>            
+            <p><a href="https://www.pgroup.com/index.htm">Pgi (17.3)</a>– PGI® Workstation: PGI’s suite of compilers and
+                toolsPGI Workstation™ is PGI’s single-user scientific and engineering compilers and tools product. </p>
+            <p><a href="https://www.jetbrains.com/pycharm/">pycharm (2017.2.3)</a>– PyCharm is an integrated development
+                environment used in computer programming, specifically for the Python language. </p>
+            <p><a href="https://www.python.org/">python (2.7, 3)</a>– Python is a remarkably powerful dynamic
+                programming language that is used in a wide variety of application domains. Python is often compared to
+                Tcl, Perl, Ruby, Scheme or Java. </p>
+            <p><a href="https://www.qt.io/">qt (4.8.7, 5.15.0, 5.9.0)</a>– qt is a widget toolkit used to develop GUIs for operating systems and embedded systems. </p>
+            <p><a href="https://tiswww.case.edu/php/chet/readline/rltop.html">readline (2020_08)</a>– The GNU Readline library provides a set of functions for use by applications that allow users to edit command lines as they are typed in. Both Emacs and vi editing modes are available. The Readline library includes additional functions to maintain a list of previously-entered command lines, to recall and perhaps reedit those lines, and perform csh-like history expansion on previous commands. </p>
+            <p><a href="https://rstudio.com/">rstudio (1.3)</a>– An IDE for R </p>   
+            <p><a href="https://www.scala-sbt.org/">sbt (1.0.1)</a>– sbt is a build tool for Scala, Java, and more. </p>
+            <p><a href="http://www.sge.com/">sge (2011.11p1)</a>– The Sun Grid Engine queuing system is useful when you
+                have a lot of tasks to execute and want to distribute the tasks over a cluster of machines. </p>
+            <p><a href="https://github.com/hpcng/singularity">Singularity (2.6.0, 3.5.2)</a>– Singularity is a
+                container platform focused on supporting "Mobility of Compute". Mobility of Compute encapsulates the
+                development to compute model where developers can work in an environment of their choosing and creation,
+                and when the developer needs additional compute resources, this environment can easily be copied and
+                executed on other platforms. Additionally, as the primary use case for Singularity is targeted towards
+                computational portability. Many of the barriers to entry of other container solutions do not apply to
+                Singularity, making it an ideal solution for users (both computational and non-computational) and HPC
+                centers. </p>
+            <p><a href="https://www.schedmd.com/index.php">slurm (16.05.8)</a>– The Slurm Workload Manager, or Slurm, is
+                a free and open-source job scheduler for Linux and Unix-like kernels, used by many of the world's
+                supercomputers and computer clusters. </p>
+            <p><a href="https://www.tensorflow.org/">tensorflow (1.3)</a>– TensorFlow is an open-source machine learning
+                library for research and production. </p>
+            <p><a href="https://github.com/torch/torch7">torch (7)</a>– Torch is the main package in Torch7 where data structures for multi-dimensional tensors and mathematical operations over these are defined. Additionally, it provides many utilities for accessing files, serializing objects of arbitrary types and other useful utilities.</p>
+            <p><a href="https://github.com/adaptivecomputing/torque">Torque (6.0.2)</a>– The Terascale Open-source
+                Resource and QUEue Manager (TORQUE) is a distributed resource manager providing control over batch jobs
+                and distributed compute nodes </p>
+            <p><a href="https://github.com/yjxiong/temporal-segment-networks">TSN (2017)</a>– a novel framework for
+                video-based action recognition. which is based on the idea of long-range temporal structure modeling. It
+                combines a sparse temporal sampling strategy and video-level supervision to enable efficient and
+                effective learning using the whole action video. </p>
+            <p><a href="https://www.valgrind.org/">valgrind (3.14)</a>– Valgrind is an instrumentation framework for building dynamic analysis tools. There are Valgrind tools that can automatically detect many memory management and threading bugs, and profile your programs in detail. You can also use Valgrind to build new tools. </p>
+            <p><a href="https://xerces.apache.org/xerces-c/">xerces (3.2.2)</a>– Xerces-C++ is a validating XML parser written in a portable subset of C++. Xerces-C++ makes it easy to give your application the ability to read and write XML data. </p>
+        </div>
+    </div>
+    <div style="padding-top:10px;">
+        <div style="border:2px solid #777; border-radius:10px; padding-left:20px;">
+            <h2 style="color:#537391;"><strong>General Sciences</strong></h2>
+             <p><a href="https://cloudcompare.org/">cloudcompare (2.6.3.1)</a>– Open source 3D point cloud and mesh processing software. </p>           
+            <p><a href="https://www.nublado.org/">cloudy (c17)</a>– Cloudy is a spectral synthesis code designed to
+                simulate conditions in interstellar matter under a broad range of conditions. </p>
+            <p><a href="https://www.haitjema.com/">gflow (1.7)</a>– GFLOW is a highly efficient stepwise groundwater
+                flow modeling system developed by Haitjema Software. It models steady state flow in a single
+                heterogeneous aquifer using the Dupuit-Forchheimer assumption. </p>
+            <p><a href="https://mooseframework.inl.gov/">moose (3.11.4)</a>– Multiphysics Object-Oriented Simulation Environment, parallel finite element framework</p>      
+            <p><a href="http://snana.uchicago.edu/">SNANA (10_60d)</a>– SNANA contains a light curve fitter and
+                simulation that can be applied to any supernova (SN) model and to any data set. </p>
+            <p><a href="https://sumo.dlr.de/docs/index.html">sumo (1.5.0)</a>– "Simulation of Urban MObility" (SUMO) is an open source, highly portable, microscopic and continuous traffic simulation package designed to handle large networks. It allows for intermodal simulation including pedestrians and comes with a large set of tools for scenario creation. </p>
+            <p><a href="https://github.com/doos/tracmass">tracmass (6.0.0)</a>– TRACMASS is a Lagrangian trajectory code for ocean and atmospheric general circulation models. The code makes it possible to estimate water paths, Lagrangian stream functions (barotropic and overturning), exchange times, particle sedimentation, etc. TRACMASS has been used in studies of the global ocean circulation, of sea circulation in The Baltic, The Mediterranean and in coastal regions. </p>
+            <p><a href="https://github.com/NCAR/WRFV3">wrf (3.9.1)</a>– WRF is a state-of-the-art atmospheric modeling
+                system designed for both meteorological research and numerical weather prediction. It offers a host of
+                options for atmospheric processes and can run on a variety of computing platforms. </p>
+        </div>
+    </div>
+</div>

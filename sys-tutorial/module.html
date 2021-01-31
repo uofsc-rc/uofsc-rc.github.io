@@ -1,0 +1,53 @@
+---
+layout: default
+title: Modules
+---
+<link rel="stylesheet" href="../css/main.css">
+<div class="container">
+    <div class="jumbotron header-plain">
+        <h1>Modules</h1>
+    </div>
+    <p>RC’s HPC clusters use a tool called <strong>modules</strong> to provide a number of packages for use on the cluster.
+    <a href="https://usc-rc.github.io/sys-tutorial/getting-started">
+    A list of all software modules downloaded on the HPC clusters and a description of what they do are available here.</a>
+    </p>
+    <div>
+    <p>
+        The table below lists some of the most useful module commands:
+    </p>
+        <div>
+                <table class ="table" style="text-align: center;">
+                    <tr>
+                        <td><i>module avail</i></td>
+                        <td>Show all available packages</td>
+                    </tr>
+                    <tr>
+                        <td><i>module load</i></td>
+                        <td>Loads the environment for an application</td>
+                    </tr>
+                    <tr>
+                        <td><i>module list</i></td>
+                        <td>Check what modules are loaded for your active session</td>
+                    </tr>
+                    <tr>
+                        <td><i>module unload</i></td>
+                        <td>Remove a module’s paths</td>
+                    </tr>
+                    <tr>
+                        <td><i>module purge</i></td>
+                        <td>Remove all loaded modules</td>
+                    </tr>
+                </table>
+            </div>
+    </div>
+
+    </div>
+    <div>
+        <p>For example, to load Matlab, you can use the command:</p>
+        <p style="text-align: center;"><code>module load matlab</code></p>
+        <p>To see if the module loaded:</p>
+        <p style="text-align: center;"><code>module list</code></p>
+        <p>To unload the module:</p>
+        <p style="text-align: center;"><code>module unload matlab</code></p>
+    </div>
+</div>
