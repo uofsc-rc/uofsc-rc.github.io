@@ -1,0 +1,88 @@
+---
+layout: default
+title: MATLAB Tutorial
+---
+<link rel="stylesheet" href="../css/main.css">
+<div class="container">
+    <div class="jumbotron header-img">
+        <h1>MATLAB Tutorial</h1>
+        <p><a class="btn btn-primary btn-lg header-button"
+              href="https://github.com/uofsc-rc/uofsc-rc.github.io/tree/main/jobs/MATLAB">
+            Find the files in this tutorial on our
+            GitHub!</a></p>
+    </div>
+    <p>
+        MATLAB is a high-level language and interactive environment for numerical computation, visualization, and
+        programming. Using MATLAB, you can analyze data, develop algorithms, and create models and applications. The
+        program can be used with the GUI or in batch mode.
+        <a href="https://www.mathworks.com/help/matlab/">Documentation for MATLAB can be found on its official
+            website.</a></p>
+    <p>Currently, MATLAB versions R2017b, R2019a, R2019b are available on the cluster. </p>
+    <div>
+        <h3 style="color:#537391;"><strong>Basics</strong></h3>
+        <p>To use MATLAB through the command line, first load the MATLAB module, then use a command similar to below:
+        <p style="text-align: center;"><code>
+            matlab -r myscript
+        </code></p>
+        where myscript is the MATLAB script <i>myscript.m</i></p>
+
+        <p>To run MATLAB interactively (using the GUI), you must first enable transparent forwarding when connecting to
+            the
+            server using the -X option to the ssh command. Once logged in, start the MATLAB GUI by simply typing matlab
+            into
+            the command line.
+        </p>
+
+        <div>
+            <h3 style="color:#537391;"><strong>Running MATLAB through a job script</strong></h3>
+            1. Create a MATLAB script. The linked repository provides a simple script, matlabtest.m, which generates a
+            matrix, randomly populates it, finds the inverse, and then computes the product of the two matrices.
+
+            <h4>matlabtest.m</h4>
+            <pre><code>
+% sets the size of the matrix to 4 x 4
+n = 4;
+% randomly populates the matrix with values
+A = rand(n);
+% print the result
+A
+% takes the inverse of the matrix
+V = inv(A);
+% print the result
+V
+
+% multiply by the original matrix to get the identity matrix
+I = V*A
+			</code></pre>
+            2. Prepare the submission script, which is the script that is submitted to the Slurm scheduler as a job in
+            order
+            to run the MATLAB script. The linked repository provides the script <i>job.sh</i> as an example.
+
+            <h4>job.sh</h4>
+            <pre><code>
+#!/bin/bash
+
+#SBATCH --job-name=matlab_test
+#SBATCH -o matlab_out%j.out
+#SBATCH -e matlab_err%j.err
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=1
+
+echo -e '\n submitted Matlab job'
+echo 'hostname'
+hostname
+
+#loads the matlab module
+module load matlab
+
+#runs the matlabtest.m file using matlab, forwards results to results.txt
+matlab -r matlabtest > results.txt
+			</code></pre>
+
+            3. Submit the job using
+            <code>sbatch job.sh</code>
+
+            <p>4. Examine the results by opening the created output file.</p>
+        </div>
+    </div>
+</div>
