@@ -1,0 +1,116 @@
+---
+layout: default
+title: Abaqus Tutorial
+---
+<link rel="stylesheet" href="../css/main.css">
+<div class="container">
+    <div class="jumbotron header-img">
+        <h1>Abaqus Tutorial</h1>
+        <p><a class="btn btn-primary btn-lg header-button"
+              href="https://github.com/uofsc-rc/uofsc-rc.github.io/tree/main/jobs/Abaqus">
+            Find the files in this tutorial on our
+            GitHub!</a></p>
+    </div>
+    <p>
+        Abaqus is a finite element analysis software used for engineering simulations.
+        Using Abaqus, you can find solutions about stress and strain, natural frequencies and mode shape, forced
+        response, fatigue, and more.
+        <a href="http://dsk.ippt.pan.pl/docs/abaqus/v6.13/index.html">Documentation for Abaqus can be found on its
+            official
+            website.</a></p>
+    <p>Currently, Abaqus versions 2016, 2017, 2020 are available on the cluster. </p>
+    <div>
+        <h3 style="color:#537391;"><strong>Basics</strong></h3>
+        <p>To use Abaqus through the command line, first load the Abaqus module, then use a command similar to below:
+        <p style="text-align: center;"><code>abaqus job=jobname input=inputscript.inp</code></p>
+        where jobname is used to specify the output file name for the job run, and inputscript.inp is the input file
+        with script to be run in Abaqus.
+        Abaqus input files, ending with the extension *.inp, describe the model and simulation to be performed.</p>
+
+        <p>When running Abaqus jobs, it is advised that users create a new directory located in <i>/data</i> to
+            store the data in, and a new directory in <i>/work</i> to run the job in. </p>
+        <p>Abaqus also provides sample input files, subroutine files, journal files,
+            and parametric study script files in their
+            <a href="http://abaqus.software.polimi.it/v6.13/books/exa/default.htm">Example Problems Guide</a></p>
+        These files can be fetched from Abaqus using the command</p>
+        <p style="text-align: center;"><code>abaqus fetch job=filename</code></p>
+        <p>where filename is the name of the file you would like to fetch. To fetch a specific file, use the file’s
+            extension:</p>
+        <p style="text-align: center;"><code>abaqus fetch job=filename.inp</code></p>
+        <p>Else, to fetch all files associated with that filename, leave the extension off.</p>
+    </div>
+    <div>
+        <h3 style="color:#537391;"><strong>Running Abaqus through a job script</strong></h3>
+        <p>
+            1. Create an Abaqus input file. This repository provides the file <i>tennis_surfcav.inp</i>,
+            which performs analysis on the impact of a tennis ball onto a racket, as well as the files
+            <i>tennis_ef1.inp</i> and <i>tennis_ef2.inp</i>, which are referenced in the analysis.
+        </p>
+        <p>
+            2. Prepare the submission script, which is the script that is submitted to the Slurm scheduler as a job in
+            order
+            to run the Abaqus script.
+        </p>
+        <h4>job.sh</h4>
+        <pre><code>
+#!/bin/sh
+#SBATCH -o aba_out%j.out
+#SBATCH -e aba_err%j.err
+#SBATCH --ntasks-per-node=28
+#SBATCH -N 1
+#SBATCH -p defq
+
+## this example simulates the impact of a tennis ball onto a racket
+
+## creates a directory to throw all the files in located in /data, creates directory in /local to run the job in
+fdir=abaqus_test$SLURM_JOB_ID
+resultsDir=/work/$USER/abaqus-examples/results/$fdir
+mkdir /work/$USER/abaqus-examples/scratrch/$fdir
+mkdir $resultsDir
+
+scratchDir=/work/$USER/abaqus-examples/scratch/
+
+## initializes locations of inFile and paramFile to be copied to local later
+inFile=/work/$USER/abaqus-examples/tennis_surfcav.inp
+paramFile="/work/$USER/abaqus-examples/tennis_ef1.inp /work/$USER/abaqus-examples/tennis_ef2.inp"
+## change into local directory where results file will be stored temp
+cd /work/$USER/abaqus-examples/scratch/$fdir
+
+## copy over input file from home directory
+cp $inFile .
+## copy over param files
+for f in $paramFile
+do
+        cp $f .
+done
+
+## loads the matlab module
+module load abaqus
+## runs the abaqus job, giving it the name testP and using the tennis_surfcav file
+time abaqus job=aba_test \
+            scratch=$scratchDir \
+            cpus=$SLURM_JOB_CPUS_PER_NODE \
+            mp_mode=THREADS \
+            parallel=domain \
+            input=$inFile interactive
+
+## copys the results to the created results directory
+cp -r * $resultsDir/
+
+## removes the results from local
+rm *
+cd /work/$USER/abaqus-examples/scratch/
+rmdir $fdir
+
+echo 'done'
+        </code></pre>
+
+        3. Submit the job using
+        <code>sbatch job.sh</code>
+
+        <p>4.Examine the results by opening the new directory, <i>abaqus_test</i>.
+            More information about what each file contains can be found in the
+            <a href="https://www.sharcnet.ca/Software/Abaqus610/Documentation/docs/v6.10/books/usb/default.htm?startat=pt01ch03s06aus34.html">
+                Abaqus User’s Manual</a></p>
+    </div>
+</div>
