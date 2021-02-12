@@ -15,33 +15,33 @@
               <a class="navbar-brand" href="https://uofsc-rc.github.io/"><strong>Research Computing</strong></a>
           </div>
           <ul class="nav navbar-nav">
-              <li {% if page.title == "index" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/">Home</a></li>
-              <li {% if page.title == "about" %}class="active"{% endif %}><a class="nav-item" href="https://uofsc-rc.github.io/about/" >About</a></li>
-              <li {% if page.title == "applications" %}class="active"{% endif %}><a class="nav-item" href="https://uofsc-rc.github.io/applications">Applications</a></li>
-              <li class="nav-item dropdown dropdown" {% if page.title == "tutorials" %}class="active"{% endif %}>
+              <li {% if page.path == "index.html" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/">Home</a></li>
+              <li {% if page.path == "about.html" %}class="active"{% endif %}><a class="nav-item" href="https://uofsc-rc.github.io/about/" >About</a></li>
+              <li {% if page.path == "applications.html" %}class="active"{% endif %}><a class="nav-item" href="https://uofsc-rc.github.io/applications">Applications</a></li>
+              <li class="nav-item dropdown dropdown" {% if page.path == "tutorials.html" %}class="active"{% endif %}>
                   <a class="dropdown-toggle" data-toggle="dropdown" href="https://uofsc-rc.github.io/tutorials">Software Tutorials
                       <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                      <li {% if page.title == "abaqus" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/abaqus" >Abaqus</a></li>
-                      <li {% if page.title == "amber" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/amber" >Amber</a></li>
-                      <li {% if page.title == "cuda" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/cuda">CUDA</a></li>
-                      <li {% if page.title == "matlab" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/matlab">MATLAB</a></li>
-                      <li {% if page.title == "open-mpi" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/open-mpi">Open MPI</a></li>
-                      <li {% if page.title == "python" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/python">Python</a></li>
-                      <li {% if page.title == "pytorch" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/pytorch">PyTorch</a></li>
-                      <li {% if page.title == "qe" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/qe">Quantum Espresso</a></li>
-                      <li {% if page.title == "R" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/R">R</a></li>
-                      <li {% if page.title == "tensorflow" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/tensorflow">TensorFlow</a></li>
+                      <li {% if page.path == "abaqus.html" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/abaqus" >Abaqus</a></li>
+                      <li {% if page.path == "amber.html" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/amber" >Amber</a></li>
+                      <li {% if page.path == "cuda.html" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/cuda">CUDA</a></li>
+                      <li {% if page.path == "matlab.html" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/matlab">MATLAB</a></li>
+                      <li {% if page.path == "open-mpi.html" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/open-mpi">Open MPI</a></li>
+                      <li {% if page.path == "python.html" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/python">Python</a></li>
+                      <li {% if page.path == "pytorch.html" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/pytorch">PyTorch</a></li>
+                      <li {% if page.path == "qe.html" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/qe">Quantum Espresso</a></li>
+                      <li {% if page.path == "R.html" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/R">R</a></li>
+                      <li {% if page.path == "tensorflow.html" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/tutorials/tensorflow">TensorFlow</a></li>
                   </ul>
               </li>
-              <li class="nav-item dropdown dropdown"  {% if page.title == "sys-tutorial" %}class="active"{% endif %}>
+              <li class="nav-item dropdown dropdown"  {% if page.path == "sys-tutorial.html" %}class="active"{% endif %}>
                   <a class="dropdown-toggle" data-toggle="dropdown"
                      href="https://uofsc-rc.github.io/sys-tutorial">System Tutorials
                       <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                      <li {% if page.title == "getting-started" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/sys-tutorial/getting-started">Connecting to RC Systems</a></li>
-                      <li {% if page.title == "module" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/sys-tutorial/module">Modules</a></li>
-                      <li {% if page.title == "slurm-scheduler" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/sys-tutorial/slurm-scheduler">Slurm Scheduler</a></li>
+                      <li {% if page.path == "getting-started.html" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/sys-tutorial/getting-started">Connecting to RC Systems</a></li>
+                      <li {% if page.path == "module.html" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/sys-tutorial/module">Modules</a></li>
+                      <li {% if page.path == "slurm-scheduler.html" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/sys-tutorial/slurm-scheduler">Slurm Scheduler</a></li>
                   </ul>
               </li>
           </ul>
