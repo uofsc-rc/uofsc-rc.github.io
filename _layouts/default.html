@@ -15,8 +15,8 @@
               <a class="navbar-brand" href="https://uofsc-rc.github.io/"><strong>Research Computing</strong></a>
           </div>
           <ul class="nav navbar-nav">
-              <li {% if page.path contains "index" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/">Home</a></li>
-              <li {% if page.path contains "about" %}class="active"{% endif %}><a class="nav-item" href="https://uofsc-rc.github.io/about/" >About</a></li>
+              <li {% if page.path contains "index"or page.path contains "index/" %}class="active"{% endif %}><a href="https://uofsc-rc.github.io/">Home</a></li>
+              <li {% if page.path contains "about" %}class="active"{% endif %}><a class="nav-item" href="https://uofsc-rc.github.io/about" >About</a></li>
               <li {% if page.path contains "applications" %}class="active"{% endif %}><a class="nav-item" href="https://uofsc-rc.github.io/applications">Applications</a></li>
               <li class="nav-item dropdown dropdown" {% if page.path contains "tutorials" %}class="active"{% endif %}>
                   <a class="dropdown-toggle" data-toggle="dropdown" href="https://uofsc-rc.github.io/tutorials">Software Tutorials
