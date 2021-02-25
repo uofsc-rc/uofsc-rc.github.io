@@ -1,0 +1,83 @@
+---
+layout: default
+title: Screen Command
+---
+<link rel="stylesheet" href="../css/main.css">
+<div class="container">
+    <div class="jumbotron header-plain">
+        <h1>Screen Command</h1>
+    </div>
+    <div>
+        <h3 style="color:#537391;"><strong>Screen Command</strong></h3>
+        <p>
+            Research Computing recommends using the Linux “screen” command from the login node of the High Performance Computing (HPC) cluster, to provide command line and program continuity across multiple login sessions when using mobile systems, when accessing the HPC from outside UofSC through the Virtual Private Network (VPN), or when accessing the HPC from managed systems which may be forced to reboot at any time without user choice.
+            <br/>
+            Please note that the “screen” command allows users to have multiple detached sessions which persist for an indefinite period of time, consuming resources on the HPC. As with the use of storage of “/tmp” and “/local”, users should be diligent about cleaning up “screen” sessions which are no longer needed. Research Computing does not recommend that HPC users use the “screen” command within “idev” sessions. Research Computing may monitor the number and age of detached “screen” sessions, and may develop policies and procedures to terminate detached screen sessions which have not been recently used.
+        </p>
+        <h4>A Brief Tutorial on the Linux “screen” Command</h4>
+        <p>
+            The Linux “screen” command can be used to create Linux command line and program sessions which can be detached from and reattached one or more login sessions. These “screen” sessions can survive the loss of connection to a particular login session, such as when a network or VPN connection is dropped, or they can be detached from intentionally, and they can then be reconnected to from a later login session.
+            <br/>
+            To start a “screen” session from a login session, simply type “screen”. Your screen be cleared, and you will be presented with a command line prompt.
+            <br/>
+            Once the screen session is started there many keystroke combinations which can control your screen session and the windows within it, but three of the most useful are:
+            <br/>
+        </p>
+        <div>
+            <table class ="table" style="text-align: center;">
+                <tr>
+                    <td><i>control-a c</i></td>
+                    <td>starts a new command line window within your screen session</td>
+                </tr>
+                <tr>
+                    <td><i>control-a “</i></td>
+                    <td>switches between command line or program windows within a screen session</td>
+                </tr>
+                <tr>
+                    <td><i>control-a d</i></td>
+                    <td>detaches the current screen session and returns you to your login session</td>
+                </tr>
+                <tr>
+                    <td><i>module unload</i></td>
+                    <td>Remove a module’s paths</td>
+                </tr>
+                <tr>
+                    <td><i>module purge</i></td>
+                    <td>Remove all loaded modules</td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <p style="text-align: center;">
+                To reattach to the most recently detached screen session, whether from the same login session or a different login session, type
+                <code>screen -R</code>
+                <br/>
+                You will receive an error message if more than one screen session is available.
+               <br/>
+                To list the screen sessions that are available to attach to, type
+                <code>screen -list</code>
+                This will produce a listing such as the one below:
+            </p>
+            <div class="panel panel-default" style="text-align: center">
+                <div class="panel-body">
+                    [username@login001 ~]$ screen -list
+                    <br />
+                    &emsp;7241.pts-1.login001&emsp;(Detached)
+                    <br />
+                    &emsp;22482.pts-1.login001&emsp;(Detached)
+                    <br />
+                    2 Sockets in /var/run/screen/S-username.
+                </div>
+            </div>
+        </div>
+        <p>
+            To reattach to one of the screen sessions, type 
+            <code>screen -r pid.tty.host</code>
+            <br/>
+            So, for example to reattach to the second session listed above, you would type <code>screen -r 22482.pts-1.login001</code>
+            <br/>
+            For more advanced information on screen, type “man screen” at a command line prompt.
+            <br/>
+            N.B.: There are limited situations in which X11 connectivity can be retained across detaching and reattaching screen sessions, but in general, do not expect X11 to correctly work across multiple login sessions when reattaching to a screen session.
+        </p>
+</div>
