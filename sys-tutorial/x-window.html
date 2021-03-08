@@ -76,12 +76,12 @@ title: X Window
             <li>Download and install the latest version of XQuartz from <a
                     href="https://www.xquartz.org">https://www.xquartz.org</a></li>
             <li>Start XQuartz.</li>
-            <li>Under the XQuartz > Preferences… > Security tab, make sure both the “Authenticate connections” and
+            <li>Under the <code>XQuartz > Preferences… > Security tab</code>, make sure both the “Authenticate connections” and
                 “Allow connections from network clients” check boxes are checked.</li>
             <li>I exited and restarted XQuartz, just to be sure. It is possible this step is not necessary.</li>
             <li>When connecting to the HPC, use the ssh “-Y” flag instead of the “-X” flag to force trusted connections.
-                Use a command like “ssh -Y -P &lt;port&gt;
-                &lt;username&gt;@&lt;host&gt;”.</li>
+                Use a command like <code>ssh -Y -P &lt;port&gt;
+                &lt;username&gt;@&lt;host&gt;.</code>></li>
             <li>It appears that the “Warning: No xauth data; using fake authentication data for X11 forwarding” message
                 can be safely ignored.</li>
             <li>Use “idev_x11” from the login node to get an interactive session with X11 forwarding. <b>Do not run X11
