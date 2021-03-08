@@ -24,28 +24,16 @@ title: Screen Command
             <br/>
         </p>
         <div>
-            <table class ="table" style="text-align: center;">
-                <tr>
-                    <td><i>control-a c</i></td>
-                    <td>starts a new command line window within your screen session</td>
-                </tr>
-                <tr>
-                    <td><i>control-a “</i></td>
-                    <td>switches between command line or program windows within a screen session</td>
-                </tr>
-                <tr>
-                    <td><i>control-a d</i></td>
-                    <td>detaches the current screen session and returns you to your login session</td>
-                </tr>
-                <tr>
-                    <td><i>module unload</i></td>
-                    <td>Remove a module’s paths</td>
-                </tr>
-                <tr>
-                    <td><i>module purge</i></td>
-                    <td>Remove all loaded modules</td>
-                </tr>
-            </table>
+        <pre><code>
+#starts a new command line window within your screen session
+control-a c
+
+#switches between command line or program windows within a screen session
+control-a “
+
+#detaches the current screen session and returns you to your login session
+control-a d
+        </code></pre>
         </div>
         <div>
             <p style="text-align: center;">

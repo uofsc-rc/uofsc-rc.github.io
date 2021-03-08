@@ -78,9 +78,9 @@ date
 echo "done"
         </code></pre>
         <p>Then, submit the job script to the scheduler.</p>
-        <p style="text-align: center;"><code>sbatch TestJob.sh</code></p>
+        <p class="div"><code>sbatch TestJob.sh</code></p>
         <p>Check the status of your job by using the squeue command. The below command filters the output so that it only shows jobs submitted by your username.</p>
-        <p style="text-align: center;"><code>squeue -u < username ></code></p>
+        <p class="div"><code>squeue -u &lt; username &gt;</code></p>
         <p>
             The output will show information about the jobs that are running, including the jobID, name of the job, user who submitted the job, state and time of the job, number of nodes, and Nodelist.
             The jobID is a unique identifier that is used by many Slurm commands when actions must be taken about one particular job. For example, users can cancel a job they submitted by using the scancel command.
@@ -88,6 +88,6 @@ echo "done"
             For pending jobs, that column gives the reason why the job is pending. Each job is assigned a priority depending on several parameters whose details are beyond the scope of this document.
         </p>
         <p>Once the job is finished running, you can check the output of the program by using the command:</p>
-        <p style="text-align: center;"><code>cat < jobid >.out</code></p>
+        <p class="div"><code>cat &lt; jobid &gt;.out</code></p>
     </div>
 </div>

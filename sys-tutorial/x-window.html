@@ -1,0 +1,108 @@
+---
+layout: default
+title: X Windows
+---
+<link rel="stylesheet" href="../css/main.css">
+<div class="container">
+    <div class="jumbotron header-plain">
+        <h1>X Windows</h1>
+    </div>
+    <p>The X Window System is a basic framework for a GUI enviroment which allows for drawing and moving windows on the display
+        device. The project is maintained by the <a href="https://www.x.org/wiki/">x.org foundation</a> where you can
+        find more documentation.
+    </p>
+    <p>
+        X Window supports GUI applications such as MATLAB, adding a visual component to SSHing into a node.
+    </p>
+    <h3>Pick your operating system</h3>
+    <ul>
+        <li> <a href="#windows">Windows</a></li>
+        <li> <a href="#mac">MacOS</a></li>
+        <li> <a href="#linux">Linux</a></li>
+
+    </ul>
+    <div id="windows">
+        <h1>Windows Tutorial</h1>
+        <h2>MobaXTerm</h2>
+        <p>
+        <ol>
+            <li>If you are off-campus ensure you are connected to UofSC’s VPN see <a
+                    href="https://uofsc-rc.github.io/sys-tutorial/getting-started">connecting to an HPC</a></li>
+            <li>Launch <a href="https://mobaxterm.mobatek.net/">MobaXTerm</a> and click on the session tab</li>
+            <li>Click on the SSH tab. Then select the "Advanced SSH Settings" tab and then make sure the
+                "X11-Forwarding" box is checked</li>
+            <li>Now enter the remote host, for Hyperion this is login.rci.sc.edu, see <a
+                    href="https://uofsc-rc.github.io/sys-tutorial/getting-started">getting started for the other
+                    systems</a>, all ports are 222. Press open to connect.</li>
+            <li>Type in your username and password and confirm Duo Multifactor Authentication as prompted</li>
+            <li>Now you’re on the login node. Type “idevx_11” to launch your own session. This can take some time to
+                process the allocation. <b>Do not run X11 sessions on the login node.</b></li>
+            <li>Use “xeyes &” as a test program.</li>
+            <li>You should see an eyes animation window appear from MobaXTerm</li>
+            <li>Exit your “idev_x11” session as soon as is practical.</li>
+        </ol>
+        </p>
+        <h2>PuTTY with MobaXTerm</h2>
+        <p>
+        <ol>
+            <li>If you are off-campus ensure you are connected to UofSC’s VPN see <a
+                    href="https://uofsc-rc.github.io/sys-tutorial/getting-started">connecting to an HPC</a></li>
+            <li>Launch an X Server application. For this example we'll be using <a
+                    href="https://mobaxterm.mobatek.net/">MobaXTerm</a> but you can also use the vt100 application, <a
+                    href="http://www.straightrunning.com/XmingNotes/">XMing</a> or another X11 fowarding client</li>
+            <li>Launch <a href="https://www.putty.org/">PuTTY</a>, ensure that the X11 forwarding is enabled. This
+                option can be found under <code>Connections -> SSH -> X11 </code> and then check the “Enable X11
+                forwarding” box.</li>
+            <li>In the "X display location" box enter <code>localhost:0</code></li>
+            <li>Now under the session tab in PuTTY enter the hostname, for Hyperion this is login.rci.sc.edu, see <a
+                    href="https://uofsc-rc.github.io/sys-tutorial/getting-started">getting started for the other
+                    systems</a>, all ports are 222. Press open to connect.</li>
+            <li>Type in your username and password and confirm Duo Multifactor Authentication as prompted</li>
+            <li>Now you’re on the login node. Type “idevx_11” to launch your own session. This can take some time to
+                process the allocation. <b>Do not run X11 sessions on the login node.</b></li>
+            <li>Use “xeyes &” as a test program.</li>
+            <li>You should see an eyes animation window appear from the X Server Application (not PuTTY/SSH terminal)
+            </li>
+            <li>Exit your “idev_x11” session as soon as is practical.</li>
+        </ol>
+        </p>
+    </div>
+    <div id="mac">
+        <h1>Mac OS X Catalina Tutorial</h1>
+        <p>
+        <ol>
+            <li>If you are off-campus ensure you are connected to UofSC’s VPN see <a
+                    href="https://uofsc-rc.github.io/sys-tutorial/getting-started">connecting to an HPC</a></li>
+            <li>Download and install the latest version of XQuartz from <a
+                    href="https://www.xquartz.org">https://www.xquartz.org</a></li>
+            <li>Start XQuartz.</li>
+            <li>Under the XQuartz > Preferences… > Security tab, make sure both the “Authenticate connections” and
+                “Allow connections from network clients” check boxes are checked.</li>
+            <li>I exited and restarted XQuartz, just to be sure. It is possible this step is not necessary.</li>
+            <li>When connecting to the HPC, use the ssh “-Y” flag instead of the “-X” flag to force trusted connections.
+                Use a command like “ssh -Y -P &lt;port&gt;
+                &lt;username&gt;@&lt;host&gt;”.</li>
+            <li>It appears that the “Warning: No xauth data; using fake authentication data for X11 forwarding” message
+                can be safely ignored.</li>
+            <li>Use “idev_x11” from the login node to get an interactive session with X11 forwarding. <b>Do not run X11
+                    sessions on the login node.</b></li>
+            <li>Use “xeyes &” as a test program.</li>
+            <li>Exit your “idev_x11” session as soon as is practical.</li>
+        </ol>
+        </p>
+    </div>
+    <div id="linux">
+        <h1>Linux</h1>
+        <p>
+        <ol>
+            <li>If you are off-campus ensure you are connected to UofSC’s VPN see <a
+                    href="https://uofsc-rc.github.io/sys-tutorial/getting-started">connecting to an HPC</a></li>
+            <li>To connect to the a server with X Window: <code>ssh -X -P[port] [username]@[loginnode]</code></li>
+            <li>Use “idev_x11” from the login node to get an interactive session with X11 forwarding. <b>Do not run X11
+                    sessions on the login node.</b></li>
+            <li>Use “xeyes &” as a test program.</li>
+            <li>Exit your “idev_x11” session as soon as is practical.</li>
+        </ol>
+        </p>
+    </div>
+</div>
