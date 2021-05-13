@@ -1,0 +1,108 @@
+---
+layout: default
+title: Singularity
+---
+<link rel="stylesheet" href="../css/main.css">
+<div class="container">
+    <div class="jumbotron header-plain">
+        <h1>Singularity</h1>
+    </div>
+    <div>
+        <h3 style="color:#537391;"><strong>Singularity</strong></h3>
+        <p>
+            Singularity is a container platform that allows for the creation and running of containers from reproducible images. Singularity was designed for HPC in a way that is simpler and more portable than Docker and other container management platforms. Singularity avoids many of the security and reproducibility issues that come with docker, allowing for a more streamlined container environment on our clusters.
+            <br />
+            For more detailed information on Singularity, see <a href="https://sylabs.io">sylab’s website</a> or their <a href="https://sylabs.io/guides/3.7/user-guide.pdf">documentation for version 3.7.</a><br />
+            The process of Singularity Images:
+            Pulling-> Building-> Running/Interacting
+            <br />
+        </p>
+    </div>
+    <div>
+        <h4>Loading the module</h4>
+        <p>
+            To load singularity into your environment, use the command
+            <br />
+            <code>module load singularity</code>
+            <br />
+        </p>
+    </div>
+    <div>
+        <h4>Pulling images</h4>
+        <p>
+            For Singularity images: <code>singularity pull library://{image name}</code>
+            <br />
+            Example: <code>singularity pull library://lolcow</code>
+            <br />
+            For Docker Images: <code>singularity pull docker://{user}/{image name}</code>
+            <br />
+            Example: <code>singularity pull docker://godlovedc/lolcow</code>
+            <br />
+        </p>
+    </div>
+    <div>
+        <h4>Building images</h4>
+        <p>For Singularity images: <code>singularity build {container name>}.sif library://{image name}</code>
+            <br />
+            Example: <code>singularity build ubuntu.sif library://ubuntu</code>
+            <br />
+            For Docker images: <code>singularity build {container name}.sif docker://{user}/{image name}</code>
+            <br/>
+            Example: <code>singularity build lolcow.sif docker://godlovedc/lolcow</code>
+            <br />
+    </div>
+    <div>
+        <h4>Interacting with container</h4>
+        <p>To use the singularity image as a virtual machine use the shell command. This is useful if you are sshing into a node (ssh node{number}) and running the image there.
+            <br />
+            <code>singularity shell {container name}.sif</code>
+            <br />
+            Check that the command is successful and you are actually in the environment before running tasks.
+            <br /></p>
+    </div>
+    <div>
+        <h4>Running the container</h4>
+        <p>Runscripts are scripts defined by the user and specify the commands that should be executed when it’s run. If you are familiar with Dockerfiles it is similar to how those behave. 
+        <br />
+        <code>singularity run {container_name}.sif</code>
+        <br />
+        Example: <code>singularity run lolcow_latest.sif</code>
+        <br />
+        Or you could run it just like you would an executable by doing
+        <code>./{container name}</code></p>
+    </div>
+    <div>
+        <h4>Mounting directories</h4>
+        <p>By default, singularity will mount to the current directory (pwd), /home/$USER, and /tmp directories. However, you are able to add more directories with the --bind flag.
+            <br />
+            <code>singularity exec --bind /data:/{directory path} {image name}.sif cat /mnt/{file}</code>
+            <br />
+            Example:<code>singularity exec --bind /data:/mnt lolcow_latest.sif cat /mnt/cow_advice.txt</code>
+            <br />
+        </p>
+    </div>
+    <div>
+        <h4>Converting Docker images</h4>
+        <p>Run the command docker images to view all docker images that have been pulled. Find the IMAGE ID of the image you want. We will use this in the docker save command.
+            <br />
+            <code>docker save {IMAGE ID} -o {container name}.tar</code>
+            <br />
+            We will then use singularity build on the docker archive:
+            <br/>
+            <code>singularity build –sandbox {container name} docker-archive://{path to tar file}</code>
+            <br />
+            Now use the run commands above on you converted container!
+            <br />
+            Example: <code>singularity build --sandbox lolcow docker-archive://lolcow.tar</code>
+        </p>
+    </div>
+    <div>
+        <h4>Where to find images</h4>
+        <p><a href="https://cloud.sylabs.io/home">Sylabs Cloud</a> or <a href="http://datasets.datalad.org/?dir=/shub">Datalad</a>
+            <br />
+            On the Sylabs Cloud website you are able to build your own image in the cloud, check image signatures, and share them to reproduce that image elsewhere.
+            <br />
+            Find images from the command line with <code>singularity search {image name}</code>
+        </p>
+    </div>
+</div>
