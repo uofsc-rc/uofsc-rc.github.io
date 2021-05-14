@@ -1,0 +1,74 @@
+---
+layout: default
+title: DGX Tutorial
+---
+<link rel="stylesheet" href="../css/main.css">
+<div class="container">
+    <div class="jumbotron header-img">
+        <h1>DGX Tutorial</h1>
+        <p><a class="btn btn-primary btn-lg header-button" href="https://github.com/uofsc-rc/uofsc-rc.github.io/tree/main/jobs/DGX">
+            Find the files in this tutorial on our
+            GitHub!</a></p>
+    </div>
+    <p>
+        DGX is a <a href="https://www.nvidia.com/en-us/data-center/dgx-systems/">NVIDIA infastracture</a> that can be used to deploy applications quickly and allows scalability between multple nodes.
+    <a href="https://docs.nvidia.com/dgx/dgx1-user-guide/index.html">Documentation for DGX can be found on NVIDIA's official
+        website.</a>
+    </p>
+    <div>
+        <h3 style="color:#537391;"><strong>Activating DGX</strong></h3>
+        To run an application on Hyperion with DGX, load anaconda and CUDA. Then activate the DGX configuration.
+        <pre><code>
+module load python3/anaconda/2020.02
+module load cuda/11.1
+source activate /work/examples/.conda/dgx
+    </code></pre>
+        To exit the virtual environment, use the command
+        <p style="text-align: center;"><code>
+            source deactivate
+        </code></p>
+    </div>
+    <div>
+        <h3 style="color:#537391;"><strong>Running DGX through a job script</strong></h3>
+        1. Ensure that you have a virtual environment created, following the steps described above.
+        <p>2. Create a job script. This repository provides a simple script, job.sh, which demonstrates DGX and using NVIDIA's GPU commands.</p>
+        <h4>Example DGX script job.sh</h4>
+        <pre><code>
+#!/bin/sh
+#SBATCH --job-name=dgx_test
+#SBATCH -N 1 # number of notes
+#SBATCH -n 24    ## number of CU cores
+#SBATCH --gres=gpu:1   ## number of GPUs
+#SBATCH --output dgx_%j.out #Output file
+#SBATCH --error dgx_%j.err #Error output file
+#SBATCH -p dgx_aic #DGX group
+
+#Load desired modules
+module load python3/anaconda/2020.02
+module load cuda/11.1
+source activate /work/examples/.conda/dgx
+#The following is sample script
+
+echo " The host name is"
+hostname
+
+echo " The current directory is:"
+pwd
+
+echo -e " \nConda environment list\n"
+conda list
+
+echo -e "\nCUDA Visible Devices  "
+echo  $CUDA_VISIBLE_DEVICES
+
+echo -e "\nNvidia GPU info\n"
+nvidia-smi
+
+#Add your script. Example:
+# python ./your_script.py
+#See our tutorials for how to run other applications on our clusters.
+        </code></pre>
+        <p>4. Submit the job using: <code>sbatch job.sh</code></p>
+        <p>5. Examine the results.</p>
+    </div>
+</div>
