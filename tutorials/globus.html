@@ -15,13 +15,20 @@ title: Globus Tutorial
      </p>
     <div>
         <h3 style="color:#537391;"><strong>Creating an Account</strong></h3>
-      Create a globus account <a href="https://auth.globus.org/"here.</a> You can use your university credentials to access by selecting University of South Carolina from the drop down.
+      Create a globus account <a href="https://auth.globus.org/">here.</a> You can use your university credentials to access by selecting University of South Carolina from the drop down.
         
     </div>
     <div>
-        <h3 style="color:#537391;"><strong>Running DGX through a job script</strong></h3>
-        1. Ensure that you have a virtual environment created, following the steps described above.
-        <p>2. Create a job script. This repository provides a simple script, job.sh, which demonstrates DGX and using NVIDIA's GPU commands.</p>
+        <h3 style="color:#537391;"><strong>Using Globus with the Hyperion cluster</strong></h3>
+        1. <a href="https://www.globus.org/globus-connect-personal">Install the globus personal connect client</a> on the workstation you would like to transfer files from or to.
+        <p>2. Search for uofsc#Hyperion in the Collection field. You will need to login with your cluster credentials and approve a DUO notification.</p>
+        <p><img src="https://https://github.com/uofsc-rc/uofsc-rc.github.io/images/globuscollection.gif"></p>
+        <p>3. Enter the path of the directory you want to work with and select the file or directory you want to transfer</p>
+        <p>4. From the panel selection at the top right, set the 2 pane option.
+        <p>5. Search for the other endpoint in the Collections field in this new pane and set the destination path.
+        <p>6. Click the transfer button. The transfer job will be queued and you will recieve an email when the transfer is complete.
+        <p><img src="https://https://github.com/uofsc-rc/uofsc-rc.github.io/images/globustransfer.gif"></p>
+            
         <h4>Example DGX script job.sh</h4>
         <pre><code>
 #!/bin/sh
